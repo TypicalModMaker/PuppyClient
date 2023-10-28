@@ -1,0 +1,73 @@
+---- Minecraft Crash Report ----
+// There are four lights!
+
+Time: 3/12/23 8:21 PM
+Description: Unexpected error
+
+java.lang.NullPointerException: Unexpected error
+	at dev.isnow.puppy.hook.GuiInGameHook.renderGameOverlay(GuiInGameHook.java:45)
+	at net.minecraft.client.renderer.EntityRenderer.func_181560_a(EntityRenderer.java:1351)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1144)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:414)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at dev.isnow.puppy.hook.GuiInGameHook.renderGameOverlay(GuiInGameHook.java:45)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['5170'/44470, l='MpServer', x=8.50, y=65.00, z=8.50]]
+	Chunk stats: MultiplayerChunkCache: 0, 0
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: -1523.00,111.00,683.00 - World: (-1523,111,683), Chunk: (at 13,6,11 in -96,42; contains blocks -1536,0,672 to -1521,255,687), Region: (-3,1; contains chunks -96,32 to -65,63, blocks -1536,0,512 to -1025,255,1023)
+	Level time: 1 game time, 1 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 1 total; [EntityPlayerSP['5170'/44470, l='MpServer', x=8.50, y=65.00, z=8.50]]
+	Retry entities: 0 total; []
+	Server brand: OG-Cord§r
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:401)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2772)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:443)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.8
+	Operating System: Windows 10 (amd64) version 10.0
+	CPU: <unknown>
+	Java Version: 1.8.0_352, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 888677872 bytes (847 MB) / 1099431936 bytes (1048 MB) up to 3804758016 bytes (3628 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 2, tcache: 79, allocated: 13, tallocated: 95
+	Launched Version: Puppy
+	LWJGL: 2.9.3
+	OpenGL: NVIDIA GeForce GTX 1080 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 527.56, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: <unknown>

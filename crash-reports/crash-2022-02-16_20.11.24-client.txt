@@ -1,0 +1,80 @@
+---- Minecraft Crash Report ----
+// Shall we play a game?
+
+Time: 2/16/22 8:11 PM
+Description: Initializing game
+
+java.lang.NullPointerException: Initializing game
+	at net.minecraft.client.resources.model.ModelResourceLocation.<init>(ModelResourceLocation.java:23)
+	at net.minecraft.client.renderer.block.statemap.DefaultStateMapper.getModelResourceLocation(DefaultStateMapper.java:12)
+	at net.minecraft.client.renderer.block.statemap.StateMapperBase.putStateModelLocations(StateMapperBase.java:45)
+	at net.minecraft.client.renderer.block.statemap.BlockStateMapper.putAllStateModelLocations(BlockStateMapper.java:36)
+	at net.minecraft.client.resources.model.ModelBakery.loadVariantItemModels(ModelBakery.java:90)
+	at net.minecraft.client.resources.model.ModelBakery.setupModelRegistry(ModelBakery.java:80)
+	at net.minecraft.client.resources.model.ModelManager.onResourceManagerReload(ModelManager.java:25)
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.registerReloadListener(SimpleReloadableResourceManager.java:111)
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:535)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:387)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraft.client.resources.model.ModelResourceLocation.<init>(ModelResourceLocation.java:23)
+	at net.minecraft.client.renderer.block.statemap.DefaultStateMapper.getModelResourceLocation(DefaultStateMapper.java:12)
+	at net.minecraft.client.renderer.block.statemap.StateMapperBase.putStateModelLocations(StateMapperBase.java:45)
+	at net.minecraft.client.renderer.block.statemap.BlockStateMapper.putAllStateModelLocations(BlockStateMapper.java:36)
+	at net.minecraft.client.resources.model.ModelBakery.loadVariantItemModels(ModelBakery.java:90)
+	at net.minecraft.client.resources.model.ModelBakery.setupModelRegistry(ModelBakery.java:80)
+	at net.minecraft.client.resources.model.ModelManager.onResourceManagerReload(ModelManager.java:25)
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.registerReloadListener(SimpleReloadableResourceManager.java:111)
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:535)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at net.minecraft.client.Minecraft.run(Minecraft.java:387)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.8
+	Operating System: Windows 10 (amd64) version 10.0
+	CPU: <unknown>
+	Java Version: 1.8.0_312, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 371993544 bytes (354 MB) / 627048448 bytes (598 MB) up to 3804758016 bytes (3628 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	Launched Version: Puppy
+	LWJGL: 2.9.3
+	OpenGL: NVIDIA GeForce GTX 1080 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 496.13, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: <unknown>
+	OptiFine Version: OptiFine_1.8.8_HD_U_H8
+	Render Distance Chunks: 21
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 NVIDIA 496.13
+	OpenGlRenderer: NVIDIA GeForce GTX 1080 Ti/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 6

@@ -1,0 +1,106 @@
+---- Minecraft Crash Report ----
+// I feel sad now :(
+
+Time: 4/4/22 10:44 PM
+Description: Updating screen events
+
+java.lang.IllegalArgumentException: Parameter 'directory' is not a directory: .\server-resource-packs
+	at org.apache.commons.io.FileUtils.validateListFilesParameters(FileUtils.java:2890)
+	at org.apache.commons.io.FileUtils.innerListFilesOrDirectories(FileUtils.java:1628)
+	at org.apache.commons.io.FileUtils.listFiles(FileUtils.java:2128)
+	at net.minecraft.client.resources.ResourcePackRepository.func_183028_i(ResourcePackRepository.java:253)
+	at net.minecraft.client.resources.ResourcePackRepository.downloadResourcePack(ResourcePackRepository.java:217)
+	at net.minecraft.client.network.NetHandlerPlayClient$3$1.confirmClicked(NetHandlerPlayClient.java:1828)
+	at net.minecraft.client.gui.GuiYesNo.actionPerformed(GuiYesNo.java:63)
+	at net.minecraft.client.gui.GuiScreen.mouseClicked(GuiScreen.java:508)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:604)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:573)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1762)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1089)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:408)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at org.apache.commons.io.FileUtils.validateListFilesParameters(FileUtils.java:2890)
+	at org.apache.commons.io.FileUtils.innerListFilesOrDirectories(FileUtils.java:1628)
+	at org.apache.commons.io.FileUtils.listFiles(FileUtils.java:2128)
+	at net.minecraft.client.resources.ResourcePackRepository.func_183028_i(ResourcePackRepository.java:253)
+	at net.minecraft.client.resources.ResourcePackRepository.downloadResourcePack(ResourcePackRepository.java:217)
+	at net.minecraft.client.network.NetHandlerPlayClient$3$1.confirmClicked(NetHandlerPlayClient.java:1828)
+	at net.minecraft.client.gui.GuiYesNo.actionPerformed(GuiYesNo.java:63)
+	at net.minecraft.client.gui.GuiScreen.mouseClicked(GuiScreen.java:508)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:604)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:573)
+
+-- Affected screen --
+Details:
+	Screen name: net.minecraft.client.gui.GuiYesNo
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 6 total; [EntityPlayerSP['BoundingBox'/8073, l='MpServer', x=2383.50, y=63.00, z=-2189.50], EntityOtherPlayerMP['sclozz'/2094, l='MpServer', x=2398.91, y=89.00, z=-2155.50], EntityOtherPlayerMP['Shotist'/377, l='MpServer', x=2397.50, y=88.00, z=-2157.09], EntityOtherPlayerMP['Red_Pizza'/6692, l='MpServer', x=2342.47, y=62.65, z=-2177.06], EntityOtherPlayerMP['HA_HATOL'/4619, l='MpServer', x=2398.50, y=91.06, z=-2161.38], EntityOtherPlayerMP['5170'/2946, l='MpServer', x=2402.09, y=83.00, z=-2165.88]]
+	Chunk stats: MultiplayerChunkCache: 452, 452
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: 2375.00,63.00,-2185.00 - World: (2375,63,-2185), Chunk: (at 7,3,7 in 148,-137; contains blocks 2368,0,-2192 to 2383,255,-2177), Region: (4,-5; contains chunks 128,-160 to 159,-129, blocks 2048,0,-2560 to 2559,255,-2049)
+	Level time: 169250 game time, 8502419 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 101 total; [EntityPlayerSP['BoundingBox'/8073, l='MpServer', x=2383.50, y=63.00, z=-2189.50], EntityArmorStand['ברוכים הבאים ל§3§lISRAE§b§lL SMP'/4, l='MpServer', x=2371.50, y=66.66, z=-2184.50], EntityArmorStand['Armor Stand'/5, l='MpServer', x=2371.50, y=66.41, z=-2184.50], EntityBoat['Boat'/5125, l='MpServer', x=2373.28, y=62.81, z=-2214.97], EntityArmorStand['כאן בשרת, תוכלו לשחק בסורבייבל עם אנשים §6§lמכל ישראל!'/6, l='MpServer', x=2371.50, y=66.16, z=-2184.50], EntityArmorStand['המפה של השרת בנויה בצורה של §aכדור הארץ! §fואם תכנסו לאתר שלנו:'/7, l='MpServer', x=2371.50, y=65.91, z=-2184.50], EntityArmorStand['§dmap.israelsmp.com'/8, l='MpServer', x=2371.50, y=65.66, z=-2184.50], EntityArmorStand['תוכלו לראות היכן אתם נמצאים, ואפילו איפה שאר האנשים!'/9, l='MpServer', x=2371.50, y=65.41, z=-2184.50], EntityArmorStand['Armor Stand'/10, l='MpServer', x=2371.50, y=65.16, z=-2184.50], EntityArmorStand['בשביל להכין §aקבוצה §fואיזור שבו תוכלו לשמור על הדברים שלכם'/11, l='MpServer', x=2371.50, y=64.91, z=-2184.50], EntityOtherPlayerMP['HA_HATOL'/4619, l='MpServer', x=2398.50, y=91.06, z=-2161.38], EntityArmorStand['תעשו §ct new/ §fואז את השם של הקבוצה שתרצו ליצור.'/12, l='MpServer', x=2371.50, y=64.66, z=-2184.50], EntityArmorStand['בשביל לקחת §eחלקת אדמה§f, תצטרכו להוסיף כסף לעיר שלכם!'/13, l='MpServer', x=2371.50, y=64.41, z=-2184.50], EntityArmorStand['תעשו זאת עם הפקודה §ct deposit/ §fואז את כמות הכסף שתרצו להוסיף לעיר.'/14, l='MpServer', x=2371.50, y=64.16, z=-2184.50], EntityArmorStand['לאחר מכן, תוכלו לקחת חלקת אדמה עם הפקודה §ct claim/§f!'/15, l='MpServer', x=2371.50, y=63.91, z=-2184.50], EntityArmorStand['Armor Stand'/16, l='MpServer', x=2371.50, y=63.66, z=-2184.50], EntityArmorStand['יש בשרת §bעבודות רבות §fשתוכלו לעשות בשביל להשיג §aכסף!'/17, l='MpServer', x=2371.50, y=63.41, z=-2184.50], EntityArmorStand['§c/jobs browse תעשו את הפקודה §fבשביל להסתכל על הרשימה'/18, l='MpServer', x=2371.50, y=63.16, z=-2184.50], EntityArmorStand['§eומקש ימני בעכבר §fבשביל לבחור עד §63 §aעבודות שונות!'/19, l='MpServer', x=2371.50, y=62.91, z=-2184.50], EntityArmorStand['§lהסבר על הוויס צ'אט'/20, l='MpServer', x=2374.56, y=65.16, z=-2179.31], EntityArmorStand['§fבשביל להוריד את המוד של הוויס'/21, l='MpServer', x=2374.56, y=64.91, z=-2179.31], EntityArmorStand['§fאתם צריכים §cלהיכנס §6לשרת הדיסקורד שלנו'/22, l='MpServer', x=2374.56, y=64.66, z=-2179.31], EntityArmorStand['ושם תיכנסו לצ'אט §a"הסבר התקנה"'/23, l='MpServer', x=2374.56, y=64.41, z=-2179.31], EntityArmorStand['בשביל לראות איך מורידים את §cהוויס צ'אט'/24, l='MpServer', x=2374.56, y=64.16, z=-2179.31], EntitySkeleton['Skeleton'/6681, l='MpServer', x=2409.50, y=45.00, z=-2222.50], EntityArmorStand['קישור לשרת: §5discord.israelsmp.com'/25, l='MpServer', x=2374.56, y=63.91, z=-2179.31], EntitySquid['Cod'/7967, l='MpServer', x=2352.66, y=60.16, z=-2203.17], EntitySpider['Spider'/6946, l='MpServer', x=2423.28, y=8.09, z=-2166.69], EntityOtherPlayerMP['Red_Pizza'/6692, l='MpServer', x=2342.47, y=62.65, z=-2177.06], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/36, l='MpServer', x=2327.50, y=54.38, z=-2167.19], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/37, l='MpServer', x=2327.50, y=54.28, z=-2167.28], EntitySquid['Squid'/7718, l='MpServer', x=2350.97, y=58.60, z=-2177.99], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/38, l='MpServer', x=2327.50, y=55.00, z=-2167.38], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/39, l='MpServer', x=2327.50, y=55.19, z=-2167.88], EntityArmorStand['Bike;ORANGE;81e23e93-eed2-4a53-bfd6-f3d361942bd8;e35a8be3-32b1-4515-bb87-0ededd45fc57;462685a5-d4e1-4a53-b9c5-8cc6a1b8535b;'/40, l='MpServer', x=2327.50, y=55.00, z=-2168.06], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/41, l='MpServer', x=2327.50, y=53.09, z=-2168.06], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/42, l='MpServer', x=2327.50, y=54.59, z=-2168.06], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/43, l='MpServer', x=2327.50, y=55.19, z=-2168.19], EntityOtherPlayerMP['sclozz'/2094, l='MpServer', x=2398.91, y=89.00, z=-2155.50], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/44, l='MpServer', x=2327.50, y=54.50, z=-2168.47], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594;SecondSeat'/45, l='MpServer', x=2327.50, y=54.59, z=-2168.56], EntityOtherPlayerMP['sclozz'/2094, l='MpServer', x=2398.91, y=89.00, z=-2155.50], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/46, l='MpServer', x=2327.50, y=55.44, z=-2168.63], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/47, l='MpServer', x=2327.50, y=54.28, z=-2168.66], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/48, l='MpServer', x=2327.50, y=55.53, z=-2169.03], EntityOtherPlayerMP['Shotist'/377, l='MpServer', x=2397.50, y=88.00, z=-2157.09], EntityCreeper['Creeper'/7730, l='MpServer', x=2374.19, y=21.00, z=-2171.56], EntitySkeleton['Skeleton'/5942, l='MpServer', x=2381.50, y=7.00, z=-2204.50], EntityBoat['Boat'/56, l='MpServer', x=2343.48, y=62.81, z=-2176.08], EntitySquid['Squid'/7994, l='MpServer', x=2370.11, y=58.63, z=-2213.41], EntitySquid['Squid'/7996, l='MpServer', x=2365.82, y=62.84, z=-2207.22], EntityOtherPlayerMP['Red_Pizza'/6692, l='MpServer', x=2342.47, y=62.65, z=-2177.06], EntityOtherPlayerMP['HA_HATOL'/4619, l='MpServer', x=2398.50, y=91.06, z=-2161.38], EntityArmorStand['BroomPart;28a408df-b274-4854-ae91-f3e9350a82c1;0.0;0.000/2.400/0.000;'/95, l='MpServer', x=2371.59, y=63.63, z=-2153.50], EntityArmorStand['BroomPart;28a408df-b274-4854-ae91-f3e9350a82c1;0.0;0.000/2.360/0.000;'/96, l='MpServer', x=2371.59, y=63.69, z=-2153.50], EntityArmorStand['BroomPart;28a408df-b274-4854-ae91-f3e9350a82c1;-0.191;-0.191/0.401/0.856;-90.0'/97, l='MpServer', x=2370.72, y=65.63, z=-2153.28], EntityArmorStand['BroomPart;28a408df-b274-4854-ae91-f3e9350a82c1;-0.191;-0.191/0.401/0.387;-90.0'/98, l='MpServer', x=2371.19, y=65.63, z=-2153.28], EntityArmorStand['BroomPart;28a408df-b274-4854-ae91-f3e9350a82c1;-0.191;-0.191/0.432/-0.082;-90.0'/99, l='MpServer', x=2371.66, y=65.59, z=-2153.28], EntityArmorStand['Broom;B1;81e649d5-12de-423d-bead-9652ad4bcbc6;c681c1e7-c77f-42c1-b65a-ae68db8a4408;151ba125-711a-462c-96ac-409bed04e45b;-1.0'/100, l='MpServer', x=2371.59, y=66.03, z=-2153.50], EntityCow['Cow'/101, l='MpServer', x=2377.47, y=70.00, z=-2148.78], EntityCreeper['Creeper'/7784, l='MpServer', x=2357.50, y=9.00, z=-2157.81], EntityChicken['Chicken'/104, l='MpServer', x=2398.34, y=71.00, z=-2219.81], EntitySheep['Sheep'/106, l='MpServer', x=2408.91, y=82.00, z=-2187.84], EntityChicken['Chicken'/107, l='MpServer', x=2405.22, y=79.00, z=-2189.59], EntityChicken['Chicken'/109, l='MpServer', x=2388.19, y=76.00, z=-2153.19], EntityChicken['Chicken'/110, l='MpServer', x=2401.50, y=82.23, z=-2172.78], EntityChicken['Chicken'/111, l='MpServer', x=2399.47, y=87.00, z=-2151.06], EntitySheep['Sheep'/118, l='MpServer', x=2406.47, y=78.00, z=-2193.16], EntityCow['Cow'/120, l='MpServer', x=2414.50, y=68.00, z=-2202.22], EntityOtherPlayerMP['Shotist'/377, l='MpServer', x=2397.50, y=88.00, z=-2157.09], EntityChicken['Chicken'/121, l='MpServer', x=2404.34, y=77.00, z=-2194.03], EntityCow['Cow'/122, l='MpServer', x=2397.75, y=87.00, z=-2158.63], EntityCow['Cow'/123, l='MpServer', x=2398.53, y=77.00, z=-2183.91], EntityCreeper['Creeper'/7803, l='MpServer', x=2412.19, y=33.00, z=-2154.50], EntityChicken['Chicken'/124, l='MpServer', x=2414.53, y=75.00, z=-2191.66], EntityChicken['Chicken'/125, l='MpServer', x=2409.84, y=82.00, z=-2180.47], EntitySkeleton['Skeleton'/7298, l='MpServer', x=2425.50, y=27.00, z=-2212.50], EntityOtherPlayerMP['5170'/2946, l='MpServer', x=2402.09, y=83.00, z=-2165.88], EntitySkeleton['Skeleton'/7833, l='MpServer', x=2348.06, y=22.00, z=-2167.47], EntitySquid['Tropical Fish'/6811, l='MpServer', x=2342.15, y=60.35, z=-2186.52], EntityCreeper['Creeper'/7839, l='MpServer', x=2364.22, y=22.00, z=-2166.81], EntitySquid['Cod'/7587, l='MpServer', x=2347.44, y=59.68, z=-2163.30], EntityCreeper['Creeper'/7846, l='MpServer', x=2422.50, y=10.00, z=-2182.50], EntityZombie['Zombie'/7848, l='MpServer', x=2420.50, y=17.00, z=-2163.50], EntityBat['Bat'/7080, l='MpServer', x=2359.04, y=22.18, z=-2193.17], EntityBoat['Boat'/4779, l='MpServer', x=2373.31, y=62.81, z=-2210.19], EntitySquid['Pufferfish'/7857, l='MpServer', x=2350.21, y=58.08, z=-2192.14], EntitySquid['Pufferfish'/7858, l='MpServer', x=2346.85, y=57.81, z=-2193.59], EntitySpider['Spider'/7860, l='MpServer', x=2356.81, y=8.00, z=-2164.38], EntityBoat['Boat'/5046, l='MpServer', x=2373.28, y=62.81, z=-2212.34], EntityCreeper['Creeper'/7873, l='MpServer', x=2417.50, y=40.00, z=-2194.50], EntitySkeleton['Skeleton'/7112, l='MpServer', x=2348.50, y=45.50, z=-2153.69], EntitySkeleton['Skeleton'/7888, l='MpServer', x=2357.78, y=20.00, z=-2173.22], EntityZombie['Zombie'/6866, l='MpServer', x=2367.50, y=15.00, z=-2180.50], EntityBat['Bat'/7636, l='MpServer', x=2402.05, y=48.92, z=-2148.18], EntitySkeleton['Skeleton'/7894, l='MpServer', x=2386.50, y=18.00, z=-2185.50], EntityCreeper['Creeper'/7386, l='MpServer', x=2367.50, y=8.00, z=-2209.50], EntityEnderman['Enderman'/5091, l='MpServer', x=2404.31, y=31.00, z=-2161.50], EntityBat['Bat'/7416, l='MpServer', x=2349.34, y=48.00, z=-2146.34], EntitySpider['Spider'/7673, l='MpServer', x=2427.38, y=14.09, z=-2178.69], EntitySquid['Cod'/7679, l='MpServer', x=2358.97, y=59.99, z=-2208.32]]
+	Retry entities: 0 total; []
+	Server brand: Waterfall <- Paper
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:401)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2732)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:429)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.8
+	Operating System: Windows 10 (amd64) version 10.0
+	CPU: <unknown>
+	Java Version: 1.8.0_312, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 542521728 bytes (517 MB) / 756023296 bytes (721 MB) up to 3804758016 bytes (3628 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	Launched Version: Puppy
+	LWJGL: 2.9.3
+	OpenGL: NVIDIA GeForce GTX 1080 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 496.13, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: <unknown>
+	OptiFine Version: OptiFine_1.8.8_HD_U_H8
+	Render Distance Chunks: 21
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 NVIDIA 496.13
+	OpenGlRenderer: NVIDIA GeForce GTX 1080 Ti/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 6

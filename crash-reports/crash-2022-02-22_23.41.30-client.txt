@@ -1,0 +1,106 @@
+---- Minecraft Crash Report ----
+// I let you down. Sorry :(
+
+Time: 2/22/22 11:41 PM
+Description: Updating screen events
+
+java.lang.IllegalArgumentException: Parameter 'directory' is not a directory: .\server-resource-packs
+	at org.apache.commons.io.FileUtils.validateListFilesParameters(FileUtils.java:2890)
+	at org.apache.commons.io.FileUtils.innerListFilesOrDirectories(FileUtils.java:1628)
+	at org.apache.commons.io.FileUtils.listFiles(FileUtils.java:2128)
+	at net.minecraft.client.resources.ResourcePackRepository.func_183028_i(ResourcePackRepository.java:253)
+	at net.minecraft.client.resources.ResourcePackRepository.downloadResourcePack(ResourcePackRepository.java:217)
+	at net.minecraft.client.network.NetHandlerPlayClient$3$1.confirmClicked(NetHandlerPlayClient.java:1828)
+	at net.minecraft.client.gui.GuiYesNo.actionPerformed(GuiYesNo.java:63)
+	at net.minecraft.client.gui.GuiScreen.mouseClicked(GuiScreen.java:508)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:604)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:573)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1761)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1088)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:407)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at org.apache.commons.io.FileUtils.validateListFilesParameters(FileUtils.java:2890)
+	at org.apache.commons.io.FileUtils.innerListFilesOrDirectories(FileUtils.java:1628)
+	at org.apache.commons.io.FileUtils.listFiles(FileUtils.java:2128)
+	at net.minecraft.client.resources.ResourcePackRepository.func_183028_i(ResourcePackRepository.java:253)
+	at net.minecraft.client.resources.ResourcePackRepository.downloadResourcePack(ResourcePackRepository.java:217)
+	at net.minecraft.client.network.NetHandlerPlayClient$3$1.confirmClicked(NetHandlerPlayClient.java:1828)
+	at net.minecraft.client.gui.GuiYesNo.actionPerformed(GuiYesNo.java:63)
+	at net.minecraft.client.gui.GuiScreen.mouseClicked(GuiScreen.java:508)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:604)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:573)
+
+-- Affected screen --
+Details:
+	Screen name: net.minecraft.client.gui.GuiYesNo
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 14 total; [EntityPlayerSP['BoundingBox'/24676, l='MpServer', x=0.50, y=70.00, z=0.50], EntityOtherPlayerMP['Addicted_Rebel_'/59, l='MpServer', x=-18.50, y=67.00, z=26.50], EntityOtherPlayerMP['discord'/145, l='MpServer', x=-9.50, y=72.00, z=8.50], EntityOtherPlayerMP['creative'/148, l='MpServer', x=-15.50, y=67.00, z=34.50], EntityOtherPlayerMP['minigames'/151, l='MpServer', x=-9.50, y=67.00, z=40.50], EntityOtherPlayerMP['_THELIVINGLEGEND'/24635, l='MpServer', x=-10.75, y=66.00, z=39.26], EntityOtherPlayerMP['store'/175, l='MpServer', x=10.50, y=72.00, z=8.50], EntityOtherPlayerMP['gameboy2354'/24663, l='MpServer', x=0.50, y=70.00, z=0.50], EntityOtherPlayerMP['PumpkinKing540'/24670, l='MpServer', x=0.50, y=70.00, z=0.50], EntityOtherPlayerMP['thefoxknight13'/24668, l='MpServer', x=0.50, y=70.00, z=0.50], EntityOtherPlayerMP['skyblock'/154, l='MpServer', x=10.50, y=67.00, z=40.50], EntityOtherPlayerMP['event'/157, l='MpServer', x=0.50, y=67.00, z=43.50], EntityOtherPlayerMP['survival'/172, l='MpServer', x=19.50, y=67.00, z=26.50], EntityOtherPlayerMP['prison'/163, l='MpServer', x=16.50, y=67.00, z=34.50]]
+	Chunk stats: MultiplayerChunkCache: 225, 225
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: 0.00,70.00,0.00 - World: (0,70,0), Chunk: (at 0,4,0 in 0,0; contains blocks 0,0,0 to 15,255,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 81013 game time, 126000 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: adventure (ID 2). Hardcore: false. Cheats: false
+	Forced entities: 103 total; [EntityOtherPlayerMP['prison'/163, l='MpServer', x=16.50, y=67.00, z=34.50], EntityArmorStand['Armor Stand'/39, l='MpServer', x=-33.50, y=66.00, z=48.50], EntityArmorStand['Armor Stand'/40, l='MpServer', x=-37.50, y=67.00, z=55.50], EntityArmorStand['Armor Stand'/41, l='MpServer', x=-37.50, y=67.00, z=54.50], EntityArmorStand['Armor Stand'/42, l='MpServer', x=-35.50, y=66.00, z=48.50], EntityArmorStand['Armor Stand'/43, l='MpServer', x=-37.50, y=67.00, z=53.50], EntityArmorStand['Armor Stand'/44, l='MpServer', x=-34.50, y=66.00, z=48.50], EntityArmorStand['Armor Stand'/45, l='MpServer', x=-40.50, y=67.00, z=47.50], EntityArmorStand['Armor Stand'/46, l='MpServer', x=-39.50, y=67.00, z=47.50], EntityArmorStand['Armor Stand'/47, l='MpServer', x=-39.50, y=67.00, z=47.50], EntityArmorStand['Armor Stand'/48, l='MpServer', x=-40.50, y=67.00, z=47.50], EntityArmorStand['§c§lSurvival Server'/51, l='MpServer', x=-18.50, y=70.47, z=26.50], EntityArmorStand[' §f➥ §7There are §c15 §7players online...'/52, l='MpServer', x=-18.50, y=70.22, z=26.50], EntityArmorStand['Armor Stand'/53, l='MpServer', x=-18.50, y=69.97, z=26.50], EntityArmorStand['§fAdventure throughout a Vanilla'/54, l='MpServer', x=-18.50, y=69.72, z=26.50], EntityArmorStand['§fMinecraft world with a few twists'/55, l='MpServer', x=-18.50, y=69.47, z=26.50], EntityArmorStand['§fto gameplay in this classic gamemode!'/56, l='MpServer', x=-18.50, y=69.22, z=26.50], EntityArmorStand['Armor Stand'/57, l='MpServer', x=-18.50, y=68.97, z=26.50], EntityArmorStand['§c§l** Right-Click to play Survival **'/58, l='MpServer', x=-18.50, y=68.72, z=26.50], EntityOtherPlayerMP['Addicted_Rebel_'/59, l='MpServer', x=-18.50, y=67.00, z=26.50], EntityOtherPlayerMP['_THELIVINGLEGEND'/24635, l='MpServer', x=-10.75, y=66.00, z=39.26], EntityArmorStand['§b§lChasecraft Discord'/62, l='MpServer', x=-9.50, y=73.97, z=8.50], EntityArmorStand['§fRight-Click to find out more'/63, l='MpServer', x=-9.50, y=73.72, z=8.50], EntityArmorStand['§6§lCreative Servers'/64, l='MpServer', x=-15.50, y=70.47, z=34.50], EntityArmorStand[' §f➥ §7There are §617 §7players online...'/65, l='MpServer', x=-15.50, y=70.22, z=34.50], EntityArmorStand['Armor Stand'/66, l='MpServer', x=-15.50, y=69.97, z=34.50], EntityArmorStand['§fBuild a city, a dragon or maybe'/67, l='MpServer', x=-15.50, y=69.72, z=34.50], EntityArmorStand['§fa huge mansion! Your choice. Build to'/68, l='MpServer', x=-15.50, y=69.47, z=34.50], EntityArmorStand['§fyour imaginations limit on Creative!'/69, l='MpServer', x=-15.50, y=69.22, z=34.50], EntityArmorStand['Armor Stand'/70, l='MpServer', x=-15.50, y=68.97, z=34.50], EntityArmorStand['§6§l** Right-Click to play Creative **'/71, l='MpServer', x=-15.50, y=68.72, z=34.50], EntityArmorStand['§a§lMinigames Server'/72, l='MpServer', x=-9.50, y=70.47, z=40.50], EntityArmorStand[' §f➥ §7Coming in late 2022'/73, l='MpServer', x=-9.50, y=70.22, z=40.50], EntityArmorStand['Armor Stand'/74, l='MpServer', x=-9.50, y=69.97, z=40.50], EntityArmorStand['§fPlay in a variety of fun, quick'/75, l='MpServer', x=-9.50, y=69.72, z=40.50], EntityArmorStand['§fpaced Minigames like Among Us &'/76, l='MpServer', x=-9.50, y=69.47, z=40.50], EntityArmorStand['§fBed Wars with friends or yourself!'/77, l='MpServer', x=-9.50, y=69.22, z=40.50], EntityArmorStand['Armor Stand'/78, l='MpServer', x=-9.50, y=68.97, z=40.50], EntityArmorStand['§a§l** Returning Late 2022 **'/79, l='MpServer', x=-9.50, y=68.72, z=40.50], EntityArmorStand['§c§lEvent Server'/80, l='MpServer', x=0.50, y=69.47, z=43.50], EntityArmorStand[' §f➥ §7There are §60 §7players online...'/81, l='MpServer', x=0.50, y=69.22, z=43.50], EntityArmorStand['Armor Stand'/82, l='MpServer', x=0.50, y=68.97, z=43.50], EntityArmorStand['§fThere is currently no event on!'/83, l='MpServer', x=0.50, y=68.72, z=43.50], EntityArmorStand['§d§lSkyblock Servers'/84, l='MpServer', x=10.50, y=70.47, z=40.50], EntityArmorStand[' §f➥ §7There are §d46 §7players online...'/85, l='MpServer', x=10.50, y=70.22, z=40.50], EntityArmorStand['Armor Stand'/86, l='MpServer', x=10.50, y=69.97, z=40.50], EntityOtherPlayerMP['gameboy2354'/24663, l='MpServer', x=0.50, y=70.00, z=0.50], EntityArmorStand['§fBuild your own empire in the sky and'/87, l='MpServer', x=10.50, y=69.72, z=40.50], EntityArmorStand['§ftry to become the richest island around'/88, l='MpServer', x=10.50, y=69.47, z=40.50], EntityArmorStand['§fwith your friends or by yourself!'/89, l='MpServer', x=10.50, y=69.22, z=40.50], EntityArmorStand['Armor Stand'/90, l='MpServer', x=10.50, y=68.97, z=40.50], EntityArmorStand['§d§l** Right-Click to play Skyblock **'/91, l='MpServer', x=10.50, y=68.72, z=40.50], EntityOtherPlayerMP['thefoxknight13'/24668, l='MpServer', x=0.50, y=70.00, z=0.50], EntityOtherPlayerMP['PumpkinKing540'/24670, l='MpServer', x=0.50, y=70.00, z=0.50], EntityArmorStand['§b§lPrison Server'/97, l='MpServer', x=16.50, y=70.47, z=34.50], EntityArmorStand[' §f➥ §7There are §b23 §7players online...'/98, l='MpServer', x=16.50, y=70.22, z=34.50], EntityArmorStand['Armor Stand'/99, l='MpServer', x=16.50, y=69.97, z=34.50], EntityArmorStand['§fEscape Prison by mining to earn'/100, l='MpServer', x=16.50, y=69.72, z=34.50], EntityArmorStand['§fmoney and upgrade your rank! Earn'/101, l='MpServer', x=16.50, y=69.47, z=34.50], EntityArmorStand['§ftokens to upgrade your gear.'/102, l='MpServer', x=16.50, y=69.22, z=34.50], EntityArmorStand['Armor Stand'/103, l='MpServer', x=16.50, y=68.97, z=34.50], EntityArmorStand['§b§l** Right-Click to play Prison **'/104, l='MpServer', x=16.50, y=68.72, z=34.50], EntityArmorStand['§6§lCOSMETIC EMOJI'S'/125, l='MpServer', x=36.50, y=68.97, z=60.50], EntityArmorStand['§fRight-Click to open'/126, l='MpServer', x=36.50, y=68.72, z=60.50], EntityArmorStand['§5§lComing Soon'/135, l='MpServer', x=19.50, y=70.47, z=26.50], EntityArmorStand['§f➥ §7There are §5N/A §7players online...'/136, l='MpServer', x=19.50, y=70.22, z=26.50], EntityArmorStand['Armor Stand'/137, l='MpServer', x=19.50, y=69.97, z=26.50], EntityArmorStand['§f§kCatch,§r §f§kTrain,§r §f§kBuild,§r §f§kExplore§r §f§kand§r §f§kMore!'/138, l='MpServer', x=19.50, y=69.72, z=26.50], EntityArmorStand['§f§kClassi§r §f§kPixelmon§r §f§kwith§r §f§ka§r §f§ktwist§r §f§kwowee'/139, l='MpServer', x=19.50, y=69.47, z=26.50], EntityArmorStand['§f§kRace§r §f§kothers§r §f§kto§r §f§kbecome§r §f§kthe§r §f§kChampion'/140, l='MpServer', x=19.50, y=69.22, z=26.50], EntityArmorStand['Armor Stand'/141, l='MpServer', x=19.50, y=68.97, z=26.50], EntityArmorStand['§5§l** This server is coming soon **'/142, l='MpServer', x=19.50, y=68.72, z=26.50], EntityArmorStand['§e§lChasecraft Store'/143, l='MpServer', x=10.50, y=73.97, z=8.50], EntityArmorStand['§fRight-Click to find out more'/144, l='MpServer', x=10.50, y=73.72, z=8.50], EntityOtherPlayerMP['discord'/145, l='MpServer', x=-9.50, y=72.00, z=8.50], EntityOtherPlayerMP['creative'/148, l='MpServer', x=-15.50, y=67.00, z=34.50], EntityOtherPlayerMP['minigames'/151, l='MpServer', x=-9.50, y=67.00, z=40.50], EntityOtherPlayerMP['skyblock'/154, l='MpServer', x=10.50, y=67.00, z=40.50], EntityOtherPlayerMP['event'/157, l='MpServer', x=0.50, y=67.00, z=43.50], EntityOtherPlayerMP['prison'/163, l='MpServer', x=16.50, y=67.00, z=34.50], EntityOtherPlayerMP['survival'/172, l='MpServer', x=19.50, y=67.00, z=26.50], EntityOtherPlayerMP['store'/175, l='MpServer', x=10.50, y=72.00, z=8.50], EntityPlayerSP['BoundingBox'/24676, l='MpServer', x=0.50, y=70.00, z=0.50], EntityArmorStand['Armor Stand'/178, l='MpServer', x=53.50, y=69.00, z=60.50], EntityArmorStand['Armor Stand'/179, l='MpServer', x=53.50, y=69.00, z=58.50], EntityArmorStand['Armor Stand'/180, l='MpServer', x=50.50, y=69.00, z=62.50], EntityArmorStand['Armor Stand'/182, l='MpServer', x=51.50, y=69.00, z=62.50], EntityArmorStand['Armor Stand'/183, l='MpServer', x=53.50, y=69.00, z=59.50], EntityArmorStand['Armor Stand'/184, l='MpServer', x=49.50, y=69.00, z=62.50], EntityOtherPlayerMP['Addicted_Rebel_'/59, l='MpServer', x=-18.50, y=67.00, z=26.50], EntityOtherPlayerMP['discord'/145, l='MpServer', x=-9.50, y=72.00, z=8.50], EntityOtherPlayerMP['creative'/148, l='MpServer', x=-15.50, y=67.00, z=34.50], EntityOtherPlayerMP['_THELIVINGLEGEND'/24635, l='MpServer', x=-10.75, y=66.00, z=39.26], EntityOtherPlayerMP['minigames'/151, l='MpServer', x=-9.50, y=67.00, z=40.50], EntityOtherPlayerMP['gameboy2354'/24663, l='MpServer', x=0.50, y=70.00, z=0.50], EntityOtherPlayerMP['store'/175, l='MpServer', x=10.50, y=72.00, z=8.50], EntityOtherPlayerMP['thefoxknight13'/24668, l='MpServer', x=0.50, y=70.00, z=0.50], EntityOtherPlayerMP['PumpkinKing540'/24670, l='MpServer', x=0.50, y=70.00, z=0.50], EntityOtherPlayerMP['event'/157, l='MpServer', x=0.50, y=67.00, z=43.50], EntityOtherPlayerMP['skyblock'/154, l='MpServer', x=10.50, y=67.00, z=40.50], EntityOtherPlayerMP['Buffest_Axolotl'/24384, l='MpServer', x=1.66, y=66.00, z=45.91], EntityOtherPlayerMP['Creeper_kiddo'/24667, l='MpServer', x=4.13, y=67.25, z=46.16], EntityOtherPlayerMP['survival'/172, l='MpServer', x=19.50, y=67.00, z=26.50]]
+	Retry entities: 0 total; []
+	Server brand: Waterfall <- Paper
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:401)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2731)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:428)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.8
+	Operating System: Windows 10 (amd64) version 10.0
+	CPU: <unknown>
+	Java Version: 1.8.0_312, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 470551136 bytes (448 MB) / 1351090176 bytes (1288 MB) up to 3804758016 bytes (3628 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 60, allocated: 13, tallocated: 95
+	Launched Version: Puppy
+	LWJGL: 2.9.3
+	OpenGL: NVIDIA GeForce GTX 1080 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 496.13, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: <unknown>
+	OptiFine Version: OptiFine_1.8.8_HD_U_H8
+	Render Distance Chunks: 21
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 NVIDIA 496.13
+	OpenGlRenderer: NVIDIA GeForce GTX 1080 Ti/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 6

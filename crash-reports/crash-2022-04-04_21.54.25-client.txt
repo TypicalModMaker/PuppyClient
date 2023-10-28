@@ -1,0 +1,106 @@
+---- Minecraft Crash Report ----
+// My bad.
+
+Time: 4/4/22 9:54 PM
+Description: Updating screen events
+
+java.lang.IllegalArgumentException: Parameter 'directory' is not a directory: .\server-resource-packs
+	at org.apache.commons.io.FileUtils.validateListFilesParameters(FileUtils.java:2890)
+	at org.apache.commons.io.FileUtils.innerListFilesOrDirectories(FileUtils.java:1628)
+	at org.apache.commons.io.FileUtils.listFiles(FileUtils.java:2128)
+	at net.minecraft.client.resources.ResourcePackRepository.func_183028_i(ResourcePackRepository.java:253)
+	at net.minecraft.client.resources.ResourcePackRepository.downloadResourcePack(ResourcePackRepository.java:217)
+	at net.minecraft.client.network.NetHandlerPlayClient$3$1.confirmClicked(NetHandlerPlayClient.java:1828)
+	at net.minecraft.client.gui.GuiYesNo.actionPerformed(GuiYesNo.java:63)
+	at net.minecraft.client.gui.GuiScreen.mouseClicked(GuiScreen.java:508)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:604)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:573)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1762)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1089)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:408)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at org.apache.commons.io.FileUtils.validateListFilesParameters(FileUtils.java:2890)
+	at org.apache.commons.io.FileUtils.innerListFilesOrDirectories(FileUtils.java:1628)
+	at org.apache.commons.io.FileUtils.listFiles(FileUtils.java:2128)
+	at net.minecraft.client.resources.ResourcePackRepository.func_183028_i(ResourcePackRepository.java:253)
+	at net.minecraft.client.resources.ResourcePackRepository.downloadResourcePack(ResourcePackRepository.java:217)
+	at net.minecraft.client.network.NetHandlerPlayClient$3$1.confirmClicked(NetHandlerPlayClient.java:1828)
+	at net.minecraft.client.gui.GuiYesNo.actionPerformed(GuiYesNo.java:63)
+	at net.minecraft.client.gui.GuiScreen.mouseClicked(GuiScreen.java:508)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:604)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:573)
+
+-- Affected screen --
+Details:
+	Screen name: net.minecraft.client.gui.GuiYesNo
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['51700000'/126161, l='MpServer', x=2382.50, y=63.00, z=-2191.50]]
+	Chunk stats: MultiplayerChunkCache: 255, 255
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: 2375.00,63.00,-2185.00 - World: (2375,63,-2185), Chunk: (at 7,3,7 in 148,-137; contains blocks 2368,0,-2192 to 2383,255,-2177), Region: (4,-5; contains chunks 128,-160 to 159,-129, blocks 2048,0,-2560 to 2559,255,-2049)
+	Level time: 149491 game time, 8482660 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 88 total; [EntitySquid['Squid'/126209, l='MpServer', x=2344.03, y=62.81, z=-2193.37], EntitySquid['Dolphin'/126208, l='MpServer', x=2344.43, y=57.50, z=-2188.92], EntityItem['§fCobbled Deepslate§r §bx51 §6[§e01:18§6]'/104965, l='MpServer', x=2364.09, y=62.69, z=-2184.59], EntityItem['item.tile.stonebrick'/104078, l='MpServer', x=2364.34, y=62.47, z=-2183.81], EntitySquid['Squid'/116242, l='MpServer', x=2343.28, y=62.69, z=-2153.06], EntityZombie['Zombie'/120475, l='MpServer', x=2364.75, y=24.00, z=-2164.50], EntitySquid['Pufferfish'/126497, l='MpServer', x=2355.50, y=60.00, z=-2224.50], EntitySquid['Pufferfish'/126498, l='MpServer', x=2352.50, y=60.00, z=-2224.50], EntitySquid['Cod'/126377, l='MpServer', x=2357.50, y=61.15, z=-2202.50], EntitySquid['Tropical Fish'/126505, l='MpServer', x=2359.50, y=60.00, z=-2223.50], EntitySquid['Cod'/126378, l='MpServer', x=2355.50, y=61.05, z=-2201.51], EntitySquid['Cod'/126381, l='MpServer', x=2351.50, y=58.13, z=-2181.90], EntityPlayerSP['51700000'/126161, l='MpServer', x=2382.50, y=63.00, z=-2191.50], EntityItem['§fblock.minecraft.red_sand§r §bx6 §6[§e01:07§6]'/103724, l='MpServer', x=2364.91, y=62.41, z=-2183.78], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/49, l='MpServer', x=2327.50, y=54.38, z=-2167.19], EntityItem['item.tile.torch'/105011, l='MpServer', x=2364.06, y=62.59, z=-2184.31], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/50, l='MpServer', x=2327.50, y=54.28, z=-2167.28], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/51, l='MpServer', x=2327.50, y=55.00, z=-2167.38], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/52, l='MpServer', x=2327.50, y=55.19, z=-2167.88], EntityArmorStand['Bike;ORANGE;81e23e93-eed2-4a53-bfd6-f3d361942bd8;e35a8be3-32b1-4515-bb87-0ededd45fc57;462685a5-d4e1-4a53-b9c5-8cc6a1b8535b;'/53, l='MpServer', x=2327.50, y=55.00, z=-2168.06], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/54, l='MpServer', x=2327.50, y=53.09, z=-2168.06], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/55, l='MpServer', x=2327.50, y=54.59, z=-2168.06], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/56, l='MpServer', x=2327.50, y=55.19, z=-2168.19], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/57, l='MpServer', x=2327.50, y=54.50, z=-2168.47], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594;SecondSeat'/58, l='MpServer', x=2327.50, y=54.59, z=-2168.56], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/59, l='MpServer', x=2327.50, y=55.44, z=-2168.63], EntityBat['Bat'/116669, l='MpServer', x=2364.13, y=21.00, z=-2168.53], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/60, l='MpServer', x=2327.50, y=54.28, z=-2168.66], EntityArmorStand['BikePart;d638fd1c-0a17-4ed6-a7df-d7207e8ab594'/61, l='MpServer', x=2327.50, y=55.53, z=-2169.03], EntityArmorStand['ברוכים הבאים ל§3§lISRAE§b§lL SMP'/67, l='MpServer', x=2371.50, y=66.66, z=-2184.50], EntityArmorStand['Armor Stand'/68, l='MpServer', x=2371.50, y=66.41, z=-2184.50], EntityArmorStand['כאן בשרת, תוכלו לשחק בסורבייבל עם אנשים §6§lמכל ישראל!'/69, l='MpServer', x=2371.50, y=66.16, z=-2184.50], EntityArmorStand['המפה של השרת בנויה בצורה של §aכדור הארץ! §fואם תכנסו לאתר שלנו:'/70, l='MpServer', x=2371.50, y=65.91, z=-2184.50], EntityItem['item.tile.stone.granite'/104391, l='MpServer', x=2364.53, y=62.66, z=-2183.97], EntityArmorStand['§dmap.israelsmp.com'/71, l='MpServer', x=2371.50, y=65.66, z=-2184.50], EntityArmorStand['תוכלו לראות היכן אתם נמצאים, ואפילו איפה שאר האנשים!'/72, l='MpServer', x=2371.50, y=65.41, z=-2184.50], EntityArmorStand['Armor Stand'/73, l='MpServer', x=2371.50, y=65.16, z=-2184.50], EntityArmorStand['בשביל להכין §aקבוצה §fואיזור שבו תוכלו לשמור על הדברים שלכם'/74, l='MpServer', x=2371.50, y=64.91, z=-2184.50], EntityArmorStand['תעשו §ct new/ §fואז את השם של הקבוצה שתרצו ליצור.'/75, l='MpServer', x=2371.50, y=64.66, z=-2184.50], EntityArmorStand['בשביל לקחת §eחלקת אדמה§f, תצטרכו להוסיף כסף לעיר שלכם!'/76, l='MpServer', x=2371.50, y=64.41, z=-2184.50], EntityArmorStand['תעשו זאת עם הפקודה §ct deposit/ §fואז את כמות הכסף שתרצו להוסיף לעיר.'/77, l='MpServer', x=2371.50, y=64.16, z=-2184.50], EntityArmorStand['לאחר מכן, תוכלו לקחת חלקת אדמה עם הפקודה §ct claim/§f!'/78, l='MpServer', x=2371.50, y=63.91, z=-2184.50], EntityArmorStand['Armor Stand'/79, l='MpServer', x=2371.50, y=63.66, z=-2184.50], EntityArmorStand['יש בשרת §bעבודות רבות §fשתוכלו לעשות בשביל להשיג §aכסף!'/80, l='MpServer', x=2371.50, y=63.41, z=-2184.50], EntityArmorStand['§c/jobs browse תעשו את הפקודה §fבשביל להסתכל על הרשימה'/81, l='MpServer', x=2371.50, y=63.16, z=-2184.50], EntityArmorStand['§eומקש ימני בעכבר §fבשביל לבחור עד §63 §aעבודות שונות!'/82, l='MpServer', x=2371.50, y=62.91, z=-2184.50], EntityArmorStand['§lהסבר על הוויס צ'אט'/83, l='MpServer', x=2374.56, y=65.16, z=-2179.31], EntityItem['item.tile.stone.granite'/103762, l='MpServer', x=2364.09, y=62.13, z=-2184.25], EntityArmorStand['§fבשביל להוריד את המוד של הוויס'/84, l='MpServer', x=2374.56, y=64.91, z=-2179.31], EntityArmorStand['§fאתם צריכים §cלהיכנס §6לשרת הדיסקורד שלנו'/85, l='MpServer', x=2374.56, y=64.66, z=-2179.31], EntityItem['§fitem.minecraft.stick§r §bx7 §6[§e01:15§6]'/104535, l='MpServer', x=2363.75, y=62.47, z=-2184.31], EntityArmorStand['ושם תיכנסו לצ'אט §a"הסבר התקנה"'/86, l='MpServer', x=2374.56, y=64.41, z=-2179.31], EntityItem['item.item.bow'/105558, l='MpServer', x=2364.13, y=62.50, z=-2184.28], EntityArmorStand['בשביל לראות איך מורידים את §cהוויס צ'אט'/87, l='MpServer', x=2374.56, y=64.16, z=-2179.31], EntityArmorStand['קישור לשרת: §5discord.israelsmp.com'/88, l='MpServer', x=2374.56, y=63.91, z=-2179.31], EntityBoat['Boat'/92, l='MpServer', x=2348.78, y=62.81, z=-2174.13], EntitySquid['Squid'/126172, l='MpServer', x=2352.95, y=52.01, z=-2236.80], EntityItem['item.item.string'/104543, l='MpServer', x=2364.28, y=62.44, z=-2184.00], EntitySquid['Tropical Fish'/126175, l='MpServer', x=2347.33, y=56.19, z=-2210.97], EntityArmorStand['BroomPart;28a408df-b274-4854-ae91-f3e9350a82c1;0.0;0.000/2.400/0.000;'/95, l='MpServer', x=2371.59, y=63.63, z=-2153.50], EntityArmorStand['BroomPart;28a408df-b274-4854-ae91-f3e9350a82c1;0.0;0.000/2.360/0.000;'/96, l='MpServer', x=2371.59, y=63.69, z=-2153.50], EntityArmorStand['BroomPart;28a408df-b274-4854-ae91-f3e9350a82c1;-0.191;-0.191/0.401/0.856;-90.0'/97, l='MpServer', x=2370.72, y=65.63, z=-2153.28], EntitySquid['Tropical Fish'/126176, l='MpServer', x=2349.17, y=55.97, z=-2213.22], EntitySquid['Tropical Fish'/126432, l='MpServer', x=2354.50, y=56.03, z=-2238.50], EntityArmorStand['BroomPart;28a408df-b274-4854-ae91-f3e9350a82c1;-0.191;-0.191/0.401/0.387;-90.0'/98, l='MpServer', x=2371.19, y=65.63, z=-2153.28], EntityArmorStand['BroomPart;28a408df-b274-4854-ae91-f3e9350a82c1;-0.191;-0.191/0.432/-0.082;-90.0'/99, l='MpServer', x=2371.66, y=65.59, z=-2153.28], EntityArmorStand['Broom;B1;81e649d5-12de-423d-bead-9652ad4bcbc6;c681c1e7-c77f-42c1-b65a-ae68db8a4408;151ba125-711a-462c-96ac-409bed04e45b;-1.0'/100, l='MpServer', x=2371.59, y=66.03, z=-2153.50], EntityChicken['Chicken'/102, l='MpServer', x=2396.41, y=69.00, z=-2218.72], EntityChicken['Chicken'/103, l='MpServer', x=2397.47, y=81.00, z=-2167.13], EntityCow['Cow'/104, l='MpServer', x=2408.25, y=83.00, z=-2179.31], EntityChicken['Chicken'/105, l='MpServer', x=2394.31, y=83.00, z=-2147.31], EntityChicken['Chicken'/106, l='MpServer', x=2388.25, y=76.00, z=-2153.19], EntityChicken['Chicken'/107, l='MpServer', x=2399.50, y=82.00, z=-2171.59], EntitySquid['Cod'/126186, l='MpServer', x=2343.29, y=56.82, z=-2207.64], EntitySheep['Sheep'/108, l='MpServer', x=2394.13, y=78.00, z=-2163.47], EntityChicken['Chicken'/109, l='MpServer', x=2401.63, y=85.00, z=-2159.94], EntityZombie['Zombie'/126188, l='MpServer', x=2348.50, y=41.00, z=-2175.50], EntityChicken['Chicken'/110, l='MpServer', x=2411.03, y=73.00, z=-2166.53], EntitySquid['Squid'/115439, l='MpServer', x=2336.50, y=60.59, z=-2149.84], EntitySheep['Sheep'/111, l='MpServer', x=2404.88, y=83.00, z=-2184.75], EntityCow['Cow'/112, l='MpServer', x=2408.72, y=83.00, z=-2180.28], EntityCow['Cow'/113, l='MpServer', x=2409.72, y=81.00, z=-2193.31], EntityCow['Cow'/114, l='MpServer', x=2389.47, y=75.00, z=-2157.50], EntityChicken['Chicken'/115, l='MpServer', x=2398.94, y=82.00, z=-2170.56], EntitySquid['Squid'/126205, l='MpServer', x=2347.96, y=57.83, z=-2226.02], EntityItem['§fblock.minecraft.cobblestone§r §bx22 §6[§e01:08§6]'/103804, l='MpServer', x=2364.72, y=62.38, z=-2183.88], EntitySquid['Squid'/126204, l='MpServer', x=2350.75, y=59.27, z=-2225.63], EntityItem['item.tile.netherBrick'/105086, l='MpServer', x=2364.31, y=62.44, z=-2184.19]]
+	Retry entities: 0 total; []
+	Server brand: Paper
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:401)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2732)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:429)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.8
+	Operating System: Windows 10 (amd64) version 10.0
+	CPU: <unknown>
+	Java Version: 1.8.0_312, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 341611344 bytes (325 MB) / 1422917632 bytes (1357 MB) up to 3804758016 bytes (3628 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 1, tcache: 81, allocated: 13, tallocated: 95
+	Launched Version: Puppy
+	LWJGL: 2.9.3
+	OpenGL: NVIDIA GeForce GTX 1080 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 496.13, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: <unknown>
+	OptiFine Version: OptiFine_1.8.8_HD_U_H8
+	Render Distance Chunks: 21
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 NVIDIA 496.13
+	OpenGlRenderer: NVIDIA GeForce GTX 1080 Ti/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 6

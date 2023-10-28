@@ -1,0 +1,93 @@
+---- Minecraft Crash Report ----
+// Who set us up the TNT?
+
+Time: 6/28/22 5:23 PM
+Description: Updating screen events
+
+java.lang.NullPointerException: Updating screen events
+	at net.minecraft.client.renderer.texture.DynamicTexture.<init>(DynamicTexture.java:23)
+	at net.minecraft.client.resources.ResourcePackListEntryDefault.<init>(ResourcePackListEntryDefault.java:28)
+	at net.minecraft.client.gui.GuiScreenResourcePacks.initGui(GuiScreenResourcePacks.java:66)
+	at net.minecraft.client.gui.GuiScreen.setWorldAndResolution(GuiScreen.java:553)
+	at net.minecraft.client.Minecraft.displayGuiScreen(Minecraft.java:985)
+	at net.minecraft.client.gui.GuiOptions.actionPerformed(GuiOptions.java:198)
+	at net.minecraft.client.gui.GuiScreen.mouseClicked(GuiScreen.java:508)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:604)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:573)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1766)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1089)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:408)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraft.client.renderer.texture.DynamicTexture.<init>(DynamicTexture.java:23)
+	at net.minecraft.client.resources.ResourcePackListEntryDefault.<init>(ResourcePackListEntryDefault.java:28)
+	at net.minecraft.client.gui.GuiScreenResourcePacks.initGui(GuiScreenResourcePacks.java:66)
+	at net.minecraft.client.gui.GuiScreen.setWorldAndResolution(GuiScreen.java:553)
+	at net.minecraft.client.Minecraft.displayGuiScreen(Minecraft.java:985)
+	at net.minecraft.client.gui.GuiOptions.actionPerformed(GuiOptions.java:198)
+	at net.minecraft.client.gui.GuiScreen.mouseClicked(GuiScreen.java:508)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:604)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:573)
+
+-- Affected screen --
+Details:
+	Screen name: net.minecraft.client.gui.GuiScreenResourcePacks
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['BoundingBox'/489, l='MpServer', x=-35.45, y=77.00, z=1.49]]
+	Chunk stats: MultiplayerChunkCache: 461, 461
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: -32.00,70.00,0.00 - World: (-32,70,0), Chunk: (at 0,4,0 in -2,0; contains blocks -32,0,0 to -17,255,15), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 19436 game time, 83671683 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 14 total; [EntityZombie['Zombie'/576, l='MpServer', x=-43.50, y=-15.00, z=9.50], EntityBat['Bat'/481, l='MpServer', x=-37.38, y=14.00, z=35.28], EntityBat['Bat'/482, l='MpServer', x=-41.44, y=13.00, z=39.63], EntityZombie['Zombie'/483, l='MpServer', x=-53.25, y=29.00, z=11.53], EntitySkeleton['Skeleton'/588, l='MpServer', x=-37.50, y=32.00, z=25.50], EntitySquid['Squid'/433, l='MpServer', x=8.59, y=52.09, z=-1.06], EntitySkeleton['Skeleton'/467, l='MpServer', x=-42.50, y=-16.00, z=34.50], EntityCreeper['Creeper'/595, l='MpServer', x=-33.50, y=-13.00, z=30.50], EntityZombie['Zombie'/468, l='MpServer', x=-40.50, y=-16.00, z=36.50], EntityZombie['Zombie'/596, l='MpServer', x=-30.50, y=-13.00, z=28.50], EntityCreeper['Creeper'/470, l='MpServer', x=-44.50, y=-16.00, z=37.50], EntityPlayerSP['BoundingBox'/489, l='MpServer', x=-35.45, y=77.00, z=1.49], EntityZombie['Zombie'/601, l='MpServer', x=-43.50, y=-14.00, z=12.50], EntityCreeper['Creeper'/574, l='MpServer', x=7.50, y=27.00, z=8.91]]
+	Retry entities: 0 total; []
+	Server brand: Paper
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:401)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2736)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:429)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.8
+	Operating System: Windows 10 (amd64) version 10.0
+	CPU: <unknown>
+	Java Version: 1.8.0_312, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 849806768 bytes (810 MB) / 1624244224 bytes (1549 MB) up to 3804758016 bytes (3628 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 2, tcache: 79, allocated: 13, tallocated: 95
+	Launched Version: Puppy
+	LWJGL: 2.9.3
+	OpenGL: NVIDIA GeForce GTX 1080 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 496.13, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: <unknown>

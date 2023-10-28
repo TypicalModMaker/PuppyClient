@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="strezz" />
+      <option name="name" value="strezz" />
+      <option name="url" value="https://repo.viaversion.com/everything/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="auth" />
+      <option name="name" value="auth" />
+      <option name="url" value="https://repo.u-team.info" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="xd" />
+      <option name="name" value="xd" />
+      <option name="url" value="https://nifty-gui.sourceforge.net/nifty-maven-repo/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="litarvan" />
+      <option name="name" value="litarvan" />
+      <option name="url" value="https://litarvan.github.io/maven" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="strezz2" />
+      <option name="name" value="strezz2" />
+      <option name="url" value="https://github.com/Tecnio/strezz-central/raw/repository" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jitpack" />
+      <option name="name" value="jitpack" />
+      <option name="url" value="https://jitpack.io" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="minecraft" />
+      <option name="name" value="minecraft" />
+      <option name="url" value="https://libraries.minecraft.net/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="sfogijxsfzd" />
+      <option name="name" value="sfogijxsfzd" />
+      <option name="url" value="https://repo1.maven.org/maven2/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="viaver" />
+      <option name="name" value="viaver" />
+      <option name="url" value="https://repo.viaversion.com/" />
+    </remote-repository>
+  </component>
+</project>

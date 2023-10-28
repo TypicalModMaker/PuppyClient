@@ -1,0 +1,60 @@
+---- Minecraft Crash Report ----
+// You should try our sister game, Minceraft!
+
+Time: 10/8/22 9:35 PM
+Description: Initializing game
+
+java.lang.NoClassDefFoundError: com/viaversion/viaversion/api/platform/ViaInjector
+	at dev.isnow.puppy.Puppy.<init>(Puppy.java:48)
+	at dev.isnow.puppy.Puppy.<clinit>(Puppy.java:25)
+	at net.minecraft.client.Minecraft.createDisplay(Minecraft.java:610)
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:470)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:388)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+Caused by: java.lang.ClassNotFoundException: com.viaversion.viaversion.api.platform.ViaInjector
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:387)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:352)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 7 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at dev.isnow.puppy.Puppy.<init>(Puppy.java:48)
+	at dev.isnow.puppy.Puppy.<clinit>(Puppy.java:25)
+	at net.minecraft.client.Minecraft.createDisplay(Minecraft.java:610)
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:470)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at net.minecraft.client.Minecraft.run(Minecraft.java:388)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.8
+	Operating System: Linux (amd64) version 5.19.7-arch1-1
+	CPU: <unknown>
+	Java Version: 1.8.0_332, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 234941592 bytes (224 MB) / 295698432 bytes (282 MB) up to 3715629056 bytes (3543 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	Launched Version: Puppy
+	LWJGL: 2.9.3
+	OpenGL: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	GL Caps: 
+	Using VBOs: No
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: <unknown>

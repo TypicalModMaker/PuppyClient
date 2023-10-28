@@ -1,0 +1,93 @@
+---- Minecraft Crash Report ----
+// Hey, that tickles! Hehehe!
+
+Time: 6/11/22 12:19 PM
+Description: Updating screen events
+
+java.lang.NullPointerException: Updating screen events
+	at net.minecraft.client.renderer.texture.DynamicTexture.<init>(DynamicTexture.java:23)
+	at net.minecraft.client.resources.ResourcePackListEntryDefault.<init>(ResourcePackListEntryDefault.java:28)
+	at net.minecraft.client.gui.GuiScreenResourcePacks.initGui(GuiScreenResourcePacks.java:66)
+	at net.minecraft.client.gui.GuiScreen.setWorldAndResolution(GuiScreen.java:553)
+	at net.minecraft.client.Minecraft.displayGuiScreen(Minecraft.java:985)
+	at net.minecraft.client.gui.GuiOptions.actionPerformed(GuiOptions.java:198)
+	at net.minecraft.client.gui.GuiScreen.mouseClicked(GuiScreen.java:508)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:604)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:573)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1766)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1089)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:408)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraft.client.renderer.texture.DynamicTexture.<init>(DynamicTexture.java:23)
+	at net.minecraft.client.resources.ResourcePackListEntryDefault.<init>(ResourcePackListEntryDefault.java:28)
+	at net.minecraft.client.gui.GuiScreenResourcePacks.initGui(GuiScreenResourcePacks.java:66)
+	at net.minecraft.client.gui.GuiScreen.setWorldAndResolution(GuiScreen.java:553)
+	at net.minecraft.client.Minecraft.displayGuiScreen(Minecraft.java:985)
+	at net.minecraft.client.gui.GuiOptions.actionPerformed(GuiOptions.java:198)
+	at net.minecraft.client.gui.GuiScreen.mouseClicked(GuiScreen.java:508)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:604)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:573)
+
+-- Affected screen --
+Details:
+	Screen name: net.minecraft.client.gui.GuiScreenResourcePacks
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['BoundingBox'/19, l='MpServer', x=0.73, y=100.00, z=3.14]]
+	Chunk stats: MultiplayerChunkCache: 625, 625
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: 0.00,100.00,0.00 - World: (0,100,0), Chunk: (at 0,6,0 in 0,0; contains blocks 0,0,0 to 15,255,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 519765488 game time, 14430000 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 1 total; [EntityPlayerSP['BoundingBox'/19, l='MpServer', x=0.73, y=100.00, z=3.14]]
+	Retry entities: 0 total; []
+	Server brand: ImanitySpigot3
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:401)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2736)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:429)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.8
+	Operating System: Windows 10 (amd64) version 10.0
+	CPU: <unknown>
+	Java Version: 1.8.0_312, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 169994944 bytes (162 MB) / 981991424 bytes (936 MB) up to 3804758016 bytes (3628 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 16, allocated: 13, tallocated: 95
+	Launched Version: Puppy
+	LWJGL: 2.9.3
+	OpenGL: NVIDIA GeForce GTX 1080 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 496.13, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: <unknown>

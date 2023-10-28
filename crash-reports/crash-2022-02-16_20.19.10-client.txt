@@ -1,0 +1,96 @@
+---- Minecraft Crash Report ----
+// I let you down. Sorry :(
+
+Time: 2/16/22 8:19 PM
+Description: Unexpected error
+
+java.lang.IllegalArgumentException: Cannot set property PropertyInteger{name=damage, clazz=class java.lang.Integer, values=[0, 1, 2]} to 1337 on block minecraft:anvil, it is not an allowed value
+	at net.minecraft.block.state.BlockState$StateImplementation.withProperty(BlockState.java:143)
+	at net.minecraft.block.BlockAnvil.onBlockPlaced(BlockAnvil.java:61)
+	at net.minecraft.item.ItemBlock.onItemUse(ItemBlock.java:59)
+	at net.minecraft.item.ItemStack.onItemUse(ItemStack.java:148)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.onPlayerRightClick(PlayerControllerMP.java:432)
+	at optifine.PlayerControllerOF.onPlayerRightClick(PlayerControllerOF.java:57)
+	at net.minecraft.client.Minecraft.rightClickMouse(Minecraft.java:1573)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:2119)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1088)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:407)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraft.block.state.BlockState$StateImplementation.withProperty(BlockState.java:143)
+	at net.minecraft.block.BlockAnvil.onBlockPlaced(BlockAnvil.java:61)
+	at net.minecraft.item.ItemBlock.onItemUse(ItemBlock.java:59)
+	at net.minecraft.item.ItemStack.onItemUse(ItemStack.java:148)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.onPlayerRightClick(PlayerControllerMP.java:432)
+	at optifine.PlayerControllerOF.onPlayerRightClick(PlayerControllerOF.java:57)
+	at net.minecraft.client.Minecraft.rightClickMouse(Minecraft.java:1573)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 2 total; [EntityPlayerSP['5170'/90088, l='MpServer', x=269.74, y=76.00, z=368.78], EntityOtherPlayerMP['ytendx'/91045, l='MpServer', x=267.40, y=76.86, z=372.61]]
+	Chunk stats: MultiplayerChunkCache: 441, 441
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: 279.00,64.00,368.00 - World: (279,64,368), Chunk: (at 7,4,0 in 17,23; contains blocks 272,0,368 to 287,255,383), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 3645106 game time, 3645106 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 16 total; [EntityOtherPlayerMP['ytendx'/91045, l='MpServer', x=267.40, y=76.86, z=372.61], EntityPlayerSP['5170'/90088, l='MpServer', x=269.74, y=76.00, z=368.78], EntityPig['Pig'/41, l='MpServer', x=279.44, y=63.00, z=389.44], EntityPig['Pig'/42, l='MpServer', x=294.15, y=62.26, z=403.54], EntitySheep['Sheep'/77, l='MpServer', x=277.44, y=68.00, z=361.06], EntityPig['Pig'/18, l='MpServer', x=241.19, y=62.19, z=345.13], EntityPig['Pig'/19, l='MpServer', x=240.03, y=61.78, z=350.66], EntityPig['Pig'/22, l='MpServer', x=237.25, y=62.44, z=341.19], EntitySquid['Squid'/91321, l='MpServer', x=243.53, y=49.56, z=325.75], EntityRabbit['Rabbit'/26, l='MpServer', x=267.28, y=63.00, z=394.28], EntitySquid['Squid'/91323, l='MpServer', x=244.75, y=52.59, z=324.22], EntitySheep['Sheep'/27, l='MpServer', x=264.53, y=64.00, z=397.44], EntitySquid['Squid'/91322, l='MpServer', x=243.09, y=49.66, z=320.94], EntityPig['Pig'/28, l='MpServer', x=265.00, y=68.00, z=396.72], EntityOtherPlayerMP['ytendx'/91045, l='MpServer', x=267.40, y=76.86, z=372.61], EntityChicken['Chicken'/30, l='MpServer', x=267.53, y=62.63, z=408.28]]
+	Retry entities: 0 total; []
+	Server brand: §cAdvancedCord §71§8.§78§8.§7x§f-§71§8.§718§8.§7x§r
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:401)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2731)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:436)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.8
+	Operating System: Windows 10 (amd64) version 10.0
+	CPU: <unknown>
+	Java Version: 1.8.0_312, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 1883468888 bytes (1796 MB) / 2349334528 bytes (2240 MB) up to 3804758016 bytes (3628 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 8, tcache: 89, allocated: 13, tallocated: 95
+	Launched Version: Puppy
+	LWJGL: 2.9.3
+	OpenGL: NVIDIA GeForce GTX 1080 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 496.13, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: <unknown>
+	OptiFine Version: OptiFine_1.8.8_HD_U_H8
+	Render Distance Chunks: 21
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 NVIDIA 496.13
+	OpenGlRenderer: NVIDIA GeForce GTX 1080 Ti/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 6

@@ -1,0 +1,93 @@
+---- Minecraft Crash Report ----
+// Surprise! Haha. Well, this is awkward.
+
+Time: 5/8/22 10:01 PM
+Description: Updating screen events
+
+java.lang.NullPointerException: Updating screen events
+	at net.minecraft.client.renderer.texture.DynamicTexture.<init>(DynamicTexture.java:23)
+	at net.minecraft.client.resources.ResourcePackListEntryDefault.<init>(ResourcePackListEntryDefault.java:28)
+	at net.minecraft.client.gui.GuiScreenResourcePacks.initGui(GuiScreenResourcePacks.java:66)
+	at net.minecraft.client.gui.GuiScreen.setWorldAndResolution(GuiScreen.java:553)
+	at net.minecraft.client.Minecraft.displayGuiScreen(Minecraft.java:985)
+	at net.minecraft.client.gui.GuiOptions.actionPerformed(GuiOptions.java:198)
+	at net.minecraft.client.gui.GuiScreen.mouseClicked(GuiScreen.java:508)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:604)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:573)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1766)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1089)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:408)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraft.client.renderer.texture.DynamicTexture.<init>(DynamicTexture.java:23)
+	at net.minecraft.client.resources.ResourcePackListEntryDefault.<init>(ResourcePackListEntryDefault.java:28)
+	at net.minecraft.client.gui.GuiScreenResourcePacks.initGui(GuiScreenResourcePacks.java:66)
+	at net.minecraft.client.gui.GuiScreen.setWorldAndResolution(GuiScreen.java:553)
+	at net.minecraft.client.Minecraft.displayGuiScreen(Minecraft.java:985)
+	at net.minecraft.client.gui.GuiOptions.actionPerformed(GuiOptions.java:198)
+	at net.minecraft.client.gui.GuiScreen.mouseClicked(GuiScreen.java:508)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:604)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:573)
+
+-- Affected screen --
+Details:
+	Screen name: net.minecraft.client.gui.GuiScreenResourcePacks
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 7 total; [EntityPlayerSP['BoundingBox'/201, l='MpServer', x=0.75, y=48.00, z=-20.68], EntityOtherPlayerMP['§r'/29, l='MpServer', x=11.53, y=47.00, z=-25.47], EntityOtherPlayerMP['§r'/8, l='MpServer', x=-23.47, y=49.00, z=-9.69], EntityOtherPlayerMP['§r'/11, l='MpServer', x=-42.94, y=50.00, z=-2.47], EntityOtherPlayerMP['§r'/32, l='MpServer', x=-8.38, y=47.00, z=-29.25], EntityOtherPlayerMP['§r'/26, l='MpServer', x=22.50, y=48.00, z=-30.50], EntityOtherPlayerMP['§r'/23, l='MpServer', x=15.25, y=46.00, z=-44.41]]
+	Chunk stats: MultiplayerChunkCache: 313, 313
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: 0.00,50.00,0.00 - World: (0,50,0), Chunk: (at 0,3,0 in 0,0; contains blocks 0,0,0 to 15,255,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 79258 game time, 6066133 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 61 total; [EntityOtherPlayerMP['§r'/8, l='MpServer', x=-23.47, y=49.00, z=-9.69], EntityOtherPlayerMP['§r'/11, l='MpServer', x=-42.94, y=50.00, z=-2.47], EntityOtherPlayerMP['§r'/23, l='MpServer', x=15.25, y=46.00, z=-44.41], EntityOtherPlayerMP['§r'/26, l='MpServer', x=22.50, y=48.00, z=-30.50], EntityOtherPlayerMP['§r'/29, l='MpServer', x=11.53, y=47.00, z=-25.47], EntityOtherPlayerMP['§r'/32, l='MpServer', x=-8.38, y=47.00, z=-29.25], EntityPlayerSP['BoundingBox'/201, l='MpServer', x=0.75, y=48.00, z=-20.68], EntityOtherPlayerMP['§r'/8, l='MpServer', x=-23.47, y=49.00, z=-9.69], EntityOtherPlayerMP['§r'/11, l='MpServer', x=-42.94, y=50.00, z=-2.47], EntityOtherPlayerMP['§r'/29, l='MpServer', x=11.53, y=47.00, z=-25.47], EntityOtherPlayerMP['§r'/23, l='MpServer', x=15.25, y=46.00, z=-44.41], EntityOtherPlayerMP['§r'/32, l='MpServer', x=-8.38, y=47.00, z=-29.25], EntityOtherPlayerMP['§r'/26, l='MpServer', x=22.50, y=48.00, z=-30.50], EntityArmorStand['§a§lMAIN MENU'/47, l='MpServer', x=-8.50, y=48.97, z=-29.50], EntityArmorStand['§7(Right click to open)'/48, l='MpServer', x=-8.50, y=48.72, z=-29.50], EntityArmorStand['§b§lISLAND PANEL'/49, l='MpServer', x=11.50, y=49.97, z=-25.50], EntityArmorStand['Armor Stand'/50, l='MpServer', x=11.50, y=49.72, z=-25.50], EntityArmorStand['§7Open the main menu to create or set up.'/51, l='MpServer', x=11.50, y=49.47, z=-25.50], EntityArmorStand['§7your island configurations,'/52, l='MpServer', x=11.50, y=49.22, z=-25.50], EntityArmorStand['§7remember that you can play'/53, l='MpServer', x=11.50, y=48.97, z=-25.50], EntityArmorStand['§7different game modes.'/54, l='MpServer', x=11.50, y=48.72, z=-25.50], EntityArmorStand['§6§lSHOP'/55, l='MpServer', x=-28.50, y=47.97, z=-59.50], EntityArmorStand['§7(Right click to open)'/56, l='MpServer', x=-28.50, y=47.72, z=-59.50], EntityArmorStand['§6§lADVANCED CRATE'/69, l='MpServer', x=-62.50, y=55.97, z=-54.50], EntityArmorStand['§7Right click to open'/70, l='MpServer', x=-62.50, y=55.72, z=-54.50], EntityArmorStand['§7Current keys: §60'/71, l='MpServer', x=-62.50, y=55.47, z=-54.50], EntityArmorStand['Armor Stand'/72, l='MpServer', x=-62.50, y=55.22, z=-54.50], EntityArmorStand['§e§l◇ REWARD LEVEL:'/73, l='MpServer', x=-62.50, y=54.97, z=-54.50], EntityArmorStand['§e▉▉▉'/74, l='MpServer', x=-62.50, y=54.72, z=-54.50], EntityArmorStand['§6§lJOBS'/75, l='MpServer', x=-23.47, y=50.97, z=-9.53], EntityArmorStand['§7(Right click to open)'/76, l='MpServer', x=-23.47, y=50.72, z=-9.53], EntityArmorStand['§7§lPORTAL TO ISLAND'/77, l='MpServer', x=0.50, y=50.97, z=-52.50], EntityArmorStand['Armor Stand'/78, l='MpServer', x=0.50, y=50.72, z=-52.50], EntityArmorStand['§7Enter to create an'/79, l='MpServer', x=0.50, y=50.47, z=-52.50], EntityArmorStand['§7island and start'/80, l='MpServer', x=0.50, y=50.22, z=-52.50], EntityArmorStand['§7your adventure'/81, l='MpServer', x=0.50, y=49.97, z=-52.50], EntityArmorStand['§7§lPORTAL TO CAVES'/82, l='MpServer', x=-9.50, y=48.97, z=-52.50], EntityArmorStand['Armor Stand'/83, l='MpServer', x=-9.50, y=48.72, z=-52.50], EntityArmorStand['§7Enter to explore an'/84, l='MpServer', x=-9.50, y=48.47, z=-52.50], EntityArmorStand['§7cave and get ores'/85, l='MpServer', x=-9.50, y=48.22, z=-52.50], EntityArmorStand['Armor Stand'/86, l='MpServer', x=-9.50, y=47.97, z=-52.50], EntityArmorStand['§7§lPORTAL TO WARZONE'/87, l='MpServer', x=10.50, y=48.97, z=-53.50], EntityArmorStand['Armor Stand'/88, l='MpServer', x=10.50, y=48.72, z=-53.50], EntityArmorStand['§7Enter to a pvp zone'/89, l='MpServer', x=10.50, y=48.47, z=-53.50], EntityArmorStand['§7and kill your worst enemies'/90, l='MpServer', x=10.50, y=48.22, z=-53.50], EntityArmorStand['Armor Stand'/91, l='MpServer', x=10.50, y=47.97, z=-53.50], EntityArmorStand['§a§lAUCTION HOUSE'/92, l='MpServer', x=-54.50, y=50.97, z=-17.50], EntityArmorStand['§7(Right click to open)'/93, l='MpServer', x=-54.50, y=50.72, z=-17.50], EntityArmorStand['§c§lBANK'/94, l='MpServer', x=-42.78, y=51.97, z=-2.34], EntityArmorStand['§7(Right click to open)'/95, l='MpServer', x=-42.78, y=51.72, z=-2.34], EntityArmorStand['§3§lFISHING CONTESTS'/96, l='MpServer', x=-43.53, y=48.75, z=-40.44], EntityArmorStand['§7At the 06:00 - 12:00 - 18:00'/97, l='MpServer', x=-43.53, y=48.50, z=-40.44], EntityArmorStand['§7(Right click to open)'/98, l='MpServer', x=-43.53, y=48.25, z=-40.44], EntityArmorStand['§3§lRANKUP'/99, l='MpServer', x=15.50, y=48.22, z=-44.50], EntityArmorStand['§7Upgrade your rank'/100, l='MpServer', x=15.50, y=47.97, z=-44.50], EntityArmorStand['§7by paying money'/101, l='MpServer', x=15.50, y=47.72, z=-44.50], EntityArmorStand['§2§lLOTTERY'/102, l='MpServer', x=22.50, y=50.22, z=-30.50], EntityArmorStand['§7Try your luck and'/103, l='MpServer', x=22.50, y=49.97, z=-30.50], EntityArmorStand['§7buy a lottery ticket'/104, l='MpServer', x=22.50, y=49.72, z=-30.50], EntityArmorStand['§3§lKITS'/105, l='MpServer', x=-51.50, y=49.97, z=-46.50], EntityArmorStand['§7(Right click to open)'/106, l='MpServer', x=-51.50, y=49.72, z=-46.50]]
+	Retry entities: 0 total; []
+	Server brand: Paper
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:401)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2736)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:429)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.8
+	Operating System: Windows 10 (amd64) version 10.0
+	CPU: <unknown>
+	Java Version: 1.8.0_312, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 928685800 bytes (885 MB) / 2141716480 bytes (2042 MB) up to 3804758016 bytes (3628 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	Launched Version: Puppy
+	LWJGL: 2.9.3
+	OpenGL: NVIDIA GeForce GTX 1080 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 496.13, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: <unknown>

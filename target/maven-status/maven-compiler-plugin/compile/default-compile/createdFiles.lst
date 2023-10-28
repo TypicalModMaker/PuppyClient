@@ -1,0 +1,4 @@
+dev\isnow\puppy\command\impl\FetchAllCommand.class
+dev\isnow\puppy\command\impl\VClipCommand.class
+dev\isnow\puppy\command\impl\BanAllCommand.class
+dev\isnow\puppy\command\impl\FakeBroadcast.class

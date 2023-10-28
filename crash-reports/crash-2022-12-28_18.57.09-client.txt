@@ -1,0 +1,60 @@
+---- Minecraft Crash Report ----
+// Daisy, daisy...
+
+Time: 12/28/22 6:57 PM
+Description: Rendering screen
+
+java.lang.NullPointerException: Rendering screen
+	at dev.isnow.puppy.hook.MainMenuHook.drawScreen(MainMenuHook.java:100)
+	at net.minecraft.client.renderer.EntityRenderer.func_181560_a(EntityRenderer.java:1390)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1117)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:410)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at dev.isnow.puppy.hook.MainMenuHook.drawScreen(MainMenuHook.java:100)
+
+-- Screen render details --
+Details:
+	Screen name: dev.isnow.puppy.hook.MainMenuHook
+	Mouse location: Scaled: (0, 239). Absolute: (0, 0)
+	Screen size: Scaled: (427, 240). Absolute: (854, 480). Scale factor of 2
+Stacktrace:
+	at net.minecraft.client.renderer.EntityRenderer.func_181560_a(EntityRenderer.java:1390)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1117)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:410)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.8
+	Operating System: Windows 10 (amd64) version 10.0
+	CPU: <unknown>
+	Java Version: 1.8.0_352, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 454969824 bytes (433 MB) / 754450432 bytes (719 MB) up to 3804758016 bytes (3628 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	Launched Version: Puppy
+	LWJGL: 2.9.3
+	OpenGL: NVIDIA GeForce GTX 1080 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 527.56, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: <unknown>

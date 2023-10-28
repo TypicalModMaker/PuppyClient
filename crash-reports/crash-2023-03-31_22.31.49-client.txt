@@ -1,0 +1,99 @@
+---- Minecraft Crash Report ----
+// My bad.
+
+Time: 3/31/23 10:31 PM
+Description: Updating screen events
+
+java.lang.RuntimeException: java.io.IOException: Cannot run program "a": CreateProcess error=2, The system cannot find the file specified
+	at dev.isnow.puppy.command.impl.TestCommand.execute(TestCommand.java:73)
+	at dev.isnow.puppy.command.CommandManager.handleCommand(CommandManager.java:33)
+	at net.minecraft.client.gui.GuiScreen.sendChatMessage(GuiScreen.java:487)
+	at net.minecraft.client.gui.GuiScreen.sendChatMessage(GuiScreen.java:478)
+	at net.minecraft.client.gui.GuiChat.keyTyped(GuiChat.java:135)
+	at net.minecraft.client.gui.GuiScreen.handleKeyboardInput(GuiScreen.java:633)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:584)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1796)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1118)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:414)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+Caused by: java.io.IOException: Cannot run program "a": CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+	at dev.isnow.puppy.command.impl.TestCommand.execute(TestCommand.java:71)
+	... 11 more
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:453)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:139)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+	... 12 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at dev.isnow.puppy.command.impl.TestCommand.execute(TestCommand.java:73)
+	at dev.isnow.puppy.command.CommandManager.handleCommand(CommandManager.java:33)
+	at net.minecraft.client.gui.GuiScreen.sendChatMessage(GuiScreen.java:487)
+	at net.minecraft.client.gui.GuiScreen.sendChatMessage(GuiScreen.java:478)
+	at net.minecraft.client.gui.GuiChat.keyTyped(GuiChat.java:135)
+	at net.minecraft.client.gui.GuiScreen.handleKeyboardInput(GuiScreen.java:633)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:584)
+
+-- Affected screen --
+Details:
+	Screen name: net.minecraft.client.gui.GuiChat
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 6 total; [EntityPlayerSP['5170'/467950, l='MpServer', x=81.90, y=4.00, z=141.70], EntityOtherPlayerMP['CIT-72d9fef2e67d'/84, l='MpServer', x=110.50, y=67108863.97, z=153.56], EntityOtherPlayerMP['CIT-dc44976f9c6b'/92, l='MpServer', x=110.50, y=67108863.97, z=147.50], EntityOtherPlayerMP['CIT-740cc2f3e8f3'/96, l='MpServer', x=107.41, y=67108863.97, z=150.50], EntityOtherPlayerMP['CIT-f65935c5250f'/100, l='MpServer', x=110.53, y=67108863.97, z=147.31], EntityOtherPlayerMP['CIT-0d65fe041f01'/88, l='MpServer', x=113.47, y=67108863.97, z=150.50]]
+	Chunk stats: MultiplayerChunkCache: 441, 441
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: 200.00,4.00,104.00 - World: (200,4,104), Chunk: (at 8,0,8 in 12,6; contains blocks 192,0,96 to 207,255,111), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 327726929 game time, 24000 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 29 total; [EntityOtherPlayerMP['CIT-0d65fe041f01'/88, l='MpServer', x=113.47, y=67108863.97, z=150.50], EntityArmorStand['§cPiston'/69, l='MpServer', x=137.47, y=5.66, z=111.47], EntityArmorStand['§cNoSlow'/71, l='MpServer', x=130.56, y=5.66, z=122.44], EntityArmorStand['§cAura'/72, l='MpServer', x=124.47, y=5.66, z=144.47], EntityArmorStand['§cAura'/73, l='MpServer', x=110.50, y=5.66, z=144.50], EntityArmorStand['§cESP'/74, l='MpServer', x=94.50, y=5.66, z=151.53], EntityArmorStand['§cBreaker'/75, l='MpServer', x=81.59, y=5.66, z=150.50], EntityArmorStand['§cStealer'/76, l='MpServer', x=78.34, y=5.66, z=138.53], EntityArmorStand['§cCivBreak'/77, l='MpServer', x=85.47, y=5.66, z=117.38], EntityArmorStand['§cScaffold'/80, l='MpServer', x=68.56, y=5.66, z=103.50], EntityMinecartEmpty['entity.MinecartRideable.name'/17, l='MpServer', x=95.50, y=4.06, z=148.47], EntityOtherPlayerMP['CIT-72d9fef2e67d'/84, l='MpServer', x=110.50, y=67108863.97, z=153.56], EntityArmorStand['Killaura-Switch-4'/87, l='MpServer', x=110.50, y=67108863.97, z=153.56], EntityOtherPlayerMP['CIT-0d65fe041f01'/88, l='MpServer', x=113.47, y=67108863.97, z=150.50], EntityArmorStand['Killaura-Switch-3'/91, l='MpServer', x=113.47, y=67108863.97, z=150.50], EntityOtherPlayerMP['CIT-dc44976f9c6b'/92, l='MpServer', x=110.50, y=67108863.97, z=147.50], EntityArmorStand['Killaura-Switch-2'/95, l='MpServer', x=110.50, y=67108863.97, z=147.50], EntityOtherPlayerMP['CIT-740cc2f3e8f3'/96, l='MpServer', x=107.41, y=67108863.97, z=150.50], EntityArmorStand['Killaura-Switch-1'/99, l='MpServer', x=107.41, y=67108863.97, z=150.50], EntityOtherPlayerMP['CIT-f65935c5250f'/100, l='MpServer', x=110.53, y=67108863.97, z=147.31], EntityArmorStand['Killaura-Switch-5'/103, l='MpServer', x=110.53, y=67108863.97, z=147.31], EntityPlayerSP['5170'/467950, l='MpServer', x=81.90, y=4.00, z=141.70], EntityOtherPlayerMP['CIT-72d9fef2e67d'/84, l='MpServer', x=110.50, y=67108863.97, z=153.56], EntityArmorStand['§cLongJump'/57, l='MpServer', x=141.53, y=5.66, z=92.41], EntityOtherPlayerMP['CIT-dc44976f9c6b'/92, l='MpServer', x=110.50, y=67108863.97, z=147.50], EntityArmorStand['§cSpeed'/58, l='MpServer', x=118.38, y=5.66, z=102.44], EntityArmorStand['§cTeleport'/59, l='MpServer', x=125.47, y=5.66, z=111.53], EntityOtherPlayerMP['CIT-740cc2f3e8f3'/96, l='MpServer', x=107.41, y=67108863.97, z=150.50], EntityOtherPlayerMP['CIT-f65935c5250f'/100, l='MpServer', x=110.53, y=67108863.97, z=147.31]]
+	Retry entities: 0 total; []
+	Server brand: PaperSpigot (Velocity)
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:401)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2772)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:435)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.8
+	Operating System: Windows 10 (amd64) version 10.0
+	CPU: <unknown>
+	Java Version: 1.8.0_352, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 358360824 bytes (341 MB) / 774373376 bytes (738 MB) up to 3804758016 bytes (3628 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	Launched Version: Puppy
+	LWJGL: 2.9.3
+	OpenGL: NVIDIA GeForce GTX 1080 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 527.56, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: <unknown>

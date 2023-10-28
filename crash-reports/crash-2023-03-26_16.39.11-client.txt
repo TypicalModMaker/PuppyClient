@@ -1,0 +1,95 @@
+---- Minecraft Crash Report ----
+// There are four lights!
+
+Time: 3/26/23 4:39 PM
+Description: Updating screen events
+
+java.lang.NumberFormatException: For input string: "a"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:589)
+	at java.lang.Long.parseLong(Long.java:631)
+	at dev.isnow.puppy.command.impl.DiscordSRVCommand.execute(DiscordSRVCommand.java:27)
+	at dev.isnow.puppy.command.CommandManager.handleCommand(CommandManager.java:33)
+	at net.minecraft.client.gui.GuiScreen.sendChatMessage(GuiScreen.java:487)
+	at net.minecraft.client.gui.GuiScreen.sendChatMessage(GuiScreen.java:478)
+	at net.minecraft.client.gui.GuiChat.keyTyped(GuiChat.java:135)
+	at net.minecraft.client.gui.GuiScreen.handleKeyboardInput(GuiScreen.java:633)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:584)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1796)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1118)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:414)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:589)
+	at java.lang.Long.parseLong(Long.java:631)
+	at dev.isnow.puppy.command.impl.DiscordSRVCommand.execute(DiscordSRVCommand.java:27)
+	at dev.isnow.puppy.command.CommandManager.handleCommand(CommandManager.java:33)
+	at net.minecraft.client.gui.GuiScreen.sendChatMessage(GuiScreen.java:487)
+	at net.minecraft.client.gui.GuiScreen.sendChatMessage(GuiScreen.java:478)
+	at net.minecraft.client.gui.GuiChat.keyTyped(GuiChat.java:135)
+	at net.minecraft.client.gui.GuiScreen.handleKeyboardInput(GuiScreen.java:633)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:584)
+
+-- Affected screen --
+Details:
+	Screen name: net.minecraft.client.gui.GuiChat
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['5170'/778, l='MpServer', x=92.48, y=58.00, z=113.68]]
+	Chunk stats: MultiplayerChunkCache: 210, 210
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: 0.00,66.00,8.00 - World: (0,66,8), Chunk: (at 0,4,8 in 0,0; contains blocks 0,0,0 to 15,255,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 16919027 game time, 17158274 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 32 total; [EntityPlayerSP['5170'/778, l='MpServer', x=92.48, y=58.00, z=113.68], EntitySquid['Tropical Fish'/768, l='MpServer', x=72.81, y=4.00, z=130.80], EntityZombie['Zombie'/775, l='MpServer', x=118.50, y=66.00, z=139.50], EntityPig['Pig'/7, l='MpServer', x=75.28, y=72.00, z=69.25], EntityZombie['Zombie'/728, l='MpServer', x=107.50, y=75.00, z=86.50], EntityZombie['Zombie'/729, l='MpServer', x=105.50, y=75.00, z=84.50], EntitySkeleton['Skeleton'/667, l='MpServer', x=103.50, y=26.00, z=143.28], EntitySquid['Tropical Fish'/743, l='MpServer', x=67.41, y=1.98, z=127.66], EntityCreeper['Creeper'/808, l='MpServer', x=86.50, y=-27.00, z=144.50], EntitySquid['Tropical Fish'/746, l='MpServer', x=69.19, y=4.00, z=136.34], EntitySquid['Tropical Fish'/747, l='MpServer', x=66.13, y=2.03, z=127.75], EntitySquid['Tropical Fish'/748, l='MpServer', x=65.53, y=2.47, z=127.47], EntitySquid['Tropical Fish'/812, l='MpServer', x=57.81, y=9.59, z=117.84], EntitySquid['Tropical Fish'/813, l='MpServer', x=73.19, y=4.53, z=132.97], EntitySquid['Tropical Fish'/814, l='MpServer', x=71.92, y=4.00, z=132.36], EntitySquid['Tropical Fish'/815, l='MpServer', x=72.68, y=4.00, z=132.46], EntitySquid['Tropical Fish'/816, l='MpServer', x=73.21, y=4.03, z=131.90], EntitySquid['Tropical Fish'/817, l='MpServer', x=72.55, y=4.00, z=133.20], EntitySquid['Tropical Fish'/690, l='MpServer', x=67.50, y=3.38, z=127.34], EntitySquid['Tropical Fish'/818, l='MpServer', x=104.88, y=15.74, z=140.16], EntityBat['Bat'/627, l='MpServer', x=93.25, y=24.10, z=136.44], EntitySquid['Tropical Fish'/819, l='MpServer', x=105.44, y=15.00, z=139.53], EntityBat['Bat'/628, l='MpServer', x=98.75, y=24.10, z=140.88], EntitySquid['Tropical Fish'/820, l='MpServer', x=107.39, y=19.58, z=138.52], EntityBat['Bat'/629, l='MpServer', x=94.38, y=25.10, z=137.59], EntitySpider['Spider'/757, l='MpServer', x=51.50, y=68.00, z=110.50], EntitySquid['Tropical Fish'/821, l='MpServer', x=66.16, y=6.85, z=137.62], EntitySquid['Tropical Fish'/822, l='MpServer', x=66.17, y=6.03, z=136.20], EntitySquid['Tropical Fish'/823, l='MpServer', x=66.00, y=6.83, z=136.16], EntitySquid['Tropical Fish'/824, l='MpServer', x=67.56, y=5.82, z=136.61], EntitySquid['Tropical Fish'/767, l='MpServer', x=72.53, y=4.47, z=130.31], EntityZombie['Zombie'/639, l='MpServer', x=109.50, y=-10.00, z=135.50]]
+	Retry entities: 0 total; []
+	Server brand: Spigot
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:401)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2772)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:435)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.8
+	Operating System: Windows 10 (amd64) version 10.0
+	CPU: <unknown>
+	Java Version: 1.8.0_352, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 334053816 bytes (318 MB) / 802684928 bytes (765 MB) up to 3804758016 bytes (3628 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	Launched Version: Puppy
+	LWJGL: 2.9.3
+	OpenGL: NVIDIA GeForce GTX 1080 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 527.56, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: <unknown>

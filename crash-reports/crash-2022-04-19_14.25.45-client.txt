@@ -1,0 +1,93 @@
+---- Minecraft Crash Report ----
+// Don't be sad, have a hug! <3
+
+Time: 4/19/22 2:25 PM
+Description: Updating screen events
+
+java.lang.NullPointerException: Updating screen events
+	at net.minecraft.client.renderer.texture.DynamicTexture.<init>(DynamicTexture.java:23)
+	at net.minecraft.client.resources.ResourcePackListEntryDefault.<init>(ResourcePackListEntryDefault.java:28)
+	at net.minecraft.client.gui.GuiScreenResourcePacks.initGui(GuiScreenResourcePacks.java:66)
+	at net.minecraft.client.gui.GuiScreen.setWorldAndResolution(GuiScreen.java:553)
+	at net.minecraft.client.Minecraft.displayGuiScreen(Minecraft.java:985)
+	at net.minecraft.client.gui.GuiOptions.actionPerformed(GuiOptions.java:198)
+	at net.minecraft.client.gui.GuiScreen.mouseClicked(GuiScreen.java:508)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:604)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:573)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1766)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1089)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:408)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraft.client.renderer.texture.DynamicTexture.<init>(DynamicTexture.java:23)
+	at net.minecraft.client.resources.ResourcePackListEntryDefault.<init>(ResourcePackListEntryDefault.java:28)
+	at net.minecraft.client.gui.GuiScreenResourcePacks.initGui(GuiScreenResourcePacks.java:66)
+	at net.minecraft.client.gui.GuiScreen.setWorldAndResolution(GuiScreen.java:553)
+	at net.minecraft.client.Minecraft.displayGuiScreen(Minecraft.java:985)
+	at net.minecraft.client.gui.GuiOptions.actionPerformed(GuiOptions.java:198)
+	at net.minecraft.client.gui.GuiScreen.mouseClicked(GuiScreen.java:508)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:604)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:573)
+
+-- Affected screen --
+Details:
+	Screen name: net.minecraft.client.gui.GuiScreenResourcePacks
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 3 total; [EntityPlayerSP['BoundingBox'/810749, l='MpServer', x=-0.56, y=70.00, z=-37.55], EntityOtherPlayerMP['Viremox'/810668, l='MpServer', x=0.80, y=72.10, z=-40.97], EntityOtherPlayerMP['Viremox'/812665, l='MpServer', x=0.03, y=74.00, z=-37.25]]
+	Chunk stats: MultiplayerChunkCache: 169, 169
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: -447.00,4.00,2352.00 - World: (-447,4,2352), Chunk: (at 1,0,0 in -28,147; contains blocks -448,0,2352 to -433,255,2367), Region: (-1,4; contains chunks -32,128 to -1,159, blocks -512,0,2048 to -1,255,2559)
+	Level time: 28459737 game time, 76719724000 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: true), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 103 total; [EntitySlime['§a§l§a§lSam The Slime'/1, l='MpServer', x=-7.50, y=73.00, z=8.50], EntityVillager['§b§lWelcome Tutorial §a§l2000 Gems'/2, l='MpServer', x=8.50, y=73.00, z=-7.50], EntityOtherPlayerMP['Gabinaa_'/810610, l='MpServer', x=-93.13, y=66.41, z=27.34], EntityZombie['§5ゴ §6§lGiorno Giovanna§5 ゴ'/7, l='MpServer', x=-5.50, y=59.00, z=-65.50], EntityOtherPlayerMP['Viremox'/812417, l='MpServer', x=1.31, y=63.00, z=-36.81], EntityVillager['§b§lSnake Start §a§l200 Gems'/15, l='MpServer', x=-43.50, y=71.00, z=-77.50], EntityVillager['§b§lSnake Finish'/16, l='MpServer', x=-23.50, y=86.00, z=-80.50], EntitySkeleton['Skeleton'/21, l='MpServer', x=0.50, y=71.00, z=-41.50], EntityArmorStand['§a§lGladiators'/22, l='MpServer', x=0.50, y=70.84, z=-41.50], EntityArmorStand['§e§lCLICK TO PLAY'/23, l='MpServer', x=0.50, y=71.16, z=-41.50], EntityZombie['Zombie'/24, l='MpServer', x=35.50, y=72.00, z=-15.50], EntitySkeleton['Skeleton'/26, l='MpServer', x=35.50, y=72.00, z=-11.50], EntityZombie['Zombie'/28, l='MpServer', x=35.50, y=72.00, z=-7.50], EntityZombie['Zombie'/30, l='MpServer', x=35.50, y=72.00, z=-1.50], EntityZombie['Zombie'/32, l='MpServer', x=35.50, y=72.00, z=2.50], EntityZombie['Zombie'/34, l='MpServer', x=35.50, y=72.00, z=8.50], EntityArmorStand['§b§lWelcome Tutorial §a§l2000 Gems'/810790, l='MpServer', x=8.50, y=75.06, z=-7.50], EntitySquid['Squid'/810791, l='MpServer', x=8.50, y=74.35, z=-7.50], EntityOtherPlayerMP['Viremox'/811171, l='MpServer', x=3.94, y=65.22, z=-38.09], EntityCreeper['Creeper'/52, l='MpServer', x=-34.50, y=72.00, z=8.50], EntityOtherPlayerMP['Viremox'/811720, l='MpServer', x=10.53, y=64.44, z=-45.28], EntityArmorStand['§34 Rewards to Claim'/810810, l='MpServer', x=8.50, y=73.34, z=8.50], EntityZombie['Zombie'/54, l='MpServer', x=-34.50, y=72.00, z=2.50], EntityZombie['Zombie'/56, l='MpServer', x=-34.50, y=72.00, z=-7.50], EntityZombie['Zombie'/58, l='MpServer', x=-34.50, y=72.00, z=-11.50], EntitySkeleton['Skeleton'/60, l='MpServer', x=-34.47, y=72.00, z=-1.47], EntityVillager['Villager'/62, l='MpServer', x=-7.50, y=73.00, z=-7.50], EntityArmorStand['§a§lMineplex Player Servers'/63, l='MpServer', x=-7.50, y=72.69, z=-7.50], EntityArmorStand['§e§lPUNCH TO PLAY'/64, l='MpServer', x=-7.50, y=73.00, z=-7.50], EntityArmorStand['§a§lOpen Treasure'/810824, l='MpServer', x=-18.50, y=70.88, z=19.50], EntityArmorStand['§a§lOpen Treasure'/810825, l='MpServer', x=19.50, y=70.88, z=-18.50], EntityArmorStand['§a§lOpen Treasure'/810826, l='MpServer', x=19.50, y=70.88, z=19.50], EntityArmorStand['§70 Players'/71, l='MpServer', x=-34.50, y=72.41, z=-1.50], EntityArmorStand['§a§lUltra Hardcore'/72, l='MpServer', x=-34.50, y=72.72, z=-1.50], EntityArmorStand['§e§lPUNCH TO PLAY'/73, l='MpServer', x=-34.50, y=73.03, z=-1.50], EntityArmorStand['§a§lOpen Treasure'/810823, l='MpServer', x=-18.50, y=70.88, z=-18.50], EntityArmorStand['§70 Players'/77, l='MpServer', x=-34.50, y=71.84, z=2.50], EntityArmorStand['§a§lChampions'/78, l='MpServer', x=-34.50, y=72.16, z=2.50], EntityArmorStand['§e§lPUNCH TO PLAY'/79, l='MpServer', x=-34.50, y=72.47, z=2.50], EntityArmorStand['§70 Players'/80, l='MpServer', x=-34.50, y=71.84, z=-7.50], EntityArmorStand['§a§lThe Bridges'/81, l='MpServer', x=-34.50, y=72.16, z=-7.50], EntityArmorStand['§e§lPUNCH TO PLAY'/82, l='MpServer', x=-34.50, y=72.47, z=-7.50], EntityArmorStand['§70 Players'/86, l='MpServer', x=-34.50, y=71.69, z=8.50], EntityArmorStand['§a§lSuper Smash Mobs'/87, l='MpServer', x=-34.50, y=72.00, z=8.50], EntityArmorStand['§e§lPUNCH TO PLAY'/88, l='MpServer', x=-34.50, y=72.31, z=8.50], EntityArmorStand['§70 Players'/89, l='MpServer', x=35.50, y=71.84, z=12.50], EntityArmorStand['§a§lDraw My Thing'/90, l='MpServer', x=35.50, y=72.16, z=12.50], EntityArmorStand['§e§lPUNCH TO PLAY'/91, l='MpServer', x=35.50, y=72.47, z=12.50], EntityArmorStand['§70 Players'/92, l='MpServer', x=-34.50, y=71.84, z=12.50], EntityArmorStand['§a§lMine-Strike'/93, l='MpServer', x=-34.50, y=72.16, z=12.50], EntityArmorStand['§e§lPUNCH TO PLAY'/94, l='MpServer', x=-34.50, y=72.47, z=12.50], EntityArmorStand['§70 Players'/95, l='MpServer', x=35.50, y=71.84, z=-1.50], EntityOtherPlayerMP['Viremox'/811322, l='MpServer', x=0.00, y=75.00, z=-40.25], EntityArmorStand['§a§lNano Games'/96, l='MpServer', x=35.50, y=72.16, z=-1.50], EntityArmorStand['§e§lPUNCH TO PLAY'/97, l='MpServer', x=35.50, y=72.47, z=-1.50], EntityArmorStand['§5ゴ §6§lGiorno Giovanna§5 ゴ'/810856, l='MpServer', x=-5.50, y=61.18, z=-65.50], EntitySquid['Squid'/810857, l='MpServer', x=-5.50, y=60.46, z=-65.50], EntityArmorStand['§70 Players'/101, l='MpServer', x=35.50, y=71.84, z=2.50], EntityArmorStand['§a§lMaster Builders'/102, l='MpServer', x=35.50, y=72.16, z=2.50], EntityArmorStand['§e§lPUNCH TO PLAY'/103, l='MpServer', x=35.50, y=72.47, z=2.50], EntityArmorStand['§70 Players'/104, l='MpServer', x=-34.50, y=71.84, z=-11.50], EntitySquid['Squid'/812644, l='MpServer', x=-43.50, y=72.35, z=-77.50], EntityArmorStand['§a§lClans'/105, l='MpServer', x=-34.50, y=72.16, z=-11.50], EntityArmorStand['§e§lPUNCH TO PLAY'/106, l='MpServer', x=-34.50, y=72.47, z=-11.50], EntityArmorStand['§70 Players'/107, l='MpServer', x=35.50, y=71.84, z=-15.50], EntityArmorStand['§a§lMicro Battle'/108, l='MpServer', x=35.50, y=72.16, z=-15.50], EntityArmorStand['§e§lPUNCH TO PLAY'/109, l='MpServer', x=35.50, y=72.47, z=-15.50], EntityArmorStand['§70 Players'/110, l='MpServer', x=35.50, y=71.84, z=8.50], EntityArmorStand['§b§lSnake Start §a§l200 Gems'/812643, l='MpServer', x=-43.50, y=73.06, z=-77.50], EntityArmorStand['§a§lMixed Arcade'/111, l='MpServer', x=35.50, y=72.16, z=8.50], EntityArmorStand['§e§lPUNCH TO PLAY'/112, l='MpServer', x=35.50, y=72.47, z=8.50], EntityPlayerSP['BoundingBox'/810749, l='MpServer', x=-0.56, y=70.00, z=-37.55], EntityArmorStand['§70 Players'/113, l='MpServer', x=35.50, y=71.84, z=-7.50], EntityArmorStand['§a§lTurf Wars'/114, l='MpServer', x=35.50, y=72.16, z=-7.50], EntityArmorStand['§a§l§a§lSam The Slime'/812670, l='MpServer', x=-7.50, y=74.86, z=8.50], EntityArmorStand['§e§lPUNCH TO PLAY'/115, l='MpServer', x=35.50, y=72.47, z=-7.50], EntitySquid['Squid'/812671, l='MpServer', x=-7.50, y=74.15, z=8.50], EntityArmorStand['§70 Players'/116, l='MpServer', x=35.50, y=71.84, z=-11.50], EntityOtherPlayerMP['Evgeen'/811415, l='MpServer', x=0.50, y=72.00, z=0.50], EntityArmorStand['§a§lSuper Paintball'/117, l='MpServer', x=35.50, y=72.16, z=-11.50], EntityOtherPlayerMP['Viremox'/812665, l='MpServer', x=0.03, y=74.00, z=-37.25], EntityArmorStand['§e§lPUNCH TO PLAY'/118, l='MpServer', x=35.50, y=72.47, z=-11.50], EntityArmorStand['§b§lSnake Finish'/811386, l='MpServer', x=-23.50, y=88.06, z=-80.50], EntitySquid['Squid'/811387, l='MpServer', x=-23.50, y=87.35, z=-80.50], EntityArmorStand['§70 Players'/119, l='MpServer', x=35.50, y=71.84, z=16.50], EntityArmorStand['§a§lDragon Escape'/120, l='MpServer', x=35.50, y=72.16, z=16.50], EntityArmorStand['§e§lPUNCH TO PLAY'/121, l='MpServer', x=35.50, y=72.47, z=16.50], EntityWither['§a§lRebuilt Infrastructure!'/124, l='MpServer', x=8.00, y=59.00, z=-65.00], EntityOtherPlayerMP['Viremox'/812665, l='MpServer', x=0.03, y=74.00, z=-37.25], EntityArmorStand['Chicken'/812678, l='MpServer', x=-38.94, y=75.48, z=9.97], EntitySquid['Squid'/812679, l='MpServer', x=-38.94, y=74.77, z=9.97], EntityArmorStand['§r§a§lCarl the Creeper'/812674, l='MpServer', x=8.50, y=75.06, z=8.50], EntitySquid['Squid'/812675, l='MpServer', x=8.50, y=74.35, z=8.50], EntityOtherPlayerMP['Viremox'/812571, l='MpServer', x=-6.63, y=63.41, z=-44.47], EntityChicken['Chicken'/728469, l='MpServer', x=-38.91, y=74.59, z=9.88], EntityOtherPlayerMP['Viremox'/810668, l='MpServer', x=0.80, y=72.10, z=-40.97], EntityCreeper['§r§a§lCarl the Creeper'/810150, l='MpServer', x=8.50, y=73.00, z=8.50], EntityOtherPlayerMP['Gabinaa_'/810610, l='MpServer', x=-102.19, y=70.13, z=35.62], EntityOtherPlayerMP['Viremox'/811022, l='MpServer', x=-9.53, y=63.00, z=-41.03], EntityOtherPlayerMP['Viremox'/810668, l='MpServer', x=0.80, y=72.10, z=-40.97], EntityOtherPlayerMP['Gabinaa_'/810610, l='MpServer', x=-95.31, y=67.00, z=26.44], EntityOtherPlayerMP['Viremox'/811961, l='MpServer', x=1.13, y=75.00, z=-40.09], EntityOtherPlayerMP['Viremox'/810929, l='MpServer', x=5.88, y=63.00, z=-43.03]]
+	Retry entities: 0 total; []
+	Server brand: BungeeCord (git:BungeeCord-Bootstrap:1.18-R0.1-SNAPSHOT:a17d8f8:1634) <- Mineplex Spigot
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:401)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2736)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:429)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:9)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.8
+	Operating System: Windows 10 (amd64) version 10.0
+	CPU: <unknown>
+	Java Version: 1.8.0_312, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 15992144 bytes (15 MB) / 336068608 bytes (320 MB) up to 3804758016 bytes (3628 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	Launched Version: Puppy
+	LWJGL: 2.9.3
+	OpenGL: NVIDIA GeForce GTX 1080 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 496.13, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: <unknown>
