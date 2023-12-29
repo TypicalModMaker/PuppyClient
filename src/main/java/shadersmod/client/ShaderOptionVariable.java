@@ -1,11 +1,11 @@
 package shadersmod.client;
 
+import optifine.Config;
+import optifine.StrUtils;
+
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import optifine.Config;
-import optifine.StrUtils;
 
 public class ShaderOptionVariable extends ShaderOption
 {

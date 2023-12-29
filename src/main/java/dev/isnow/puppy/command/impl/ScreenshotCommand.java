@@ -4,8 +4,6 @@ import dev.isnow.puppy.command.Command;
 import dev.isnow.puppy.command.CommandInfo;
 import dev.isnow.puppy.exception.CommandException;
 import dev.isnow.puppy.helper.ChatHelper;
-import net.minecraft.client.Minecraft;
-import net.minecraft.util.ScreenShotHelper;
 
 import java.util.Objects;
 

@@ -1,10 +1,9 @@
 package shadersmod.client;
 
-import java.util.Properties;
-
+import optifine.Config;
 import org.apache.commons.lang3.ArrayUtils;
 
-import optifine.Config;
+import java.util.Properties;
 
 public class Property
 {

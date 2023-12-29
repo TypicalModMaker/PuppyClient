@@ -1,9 +1,9 @@
 package shadersmod.client;
 
+import optifine.StrUtils;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import optifine.StrUtils;
 
 public class ShaderOptionSwitchConst extends ShaderOptionSwitch
 {

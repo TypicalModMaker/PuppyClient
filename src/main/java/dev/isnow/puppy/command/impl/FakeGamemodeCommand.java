@@ -1,13 +1,13 @@
 package dev.isnow.puppy.command.impl;
 
-import net.minecraft.command.CommandBase;
-import net.minecraft.command.NumberInvalidException;
-import net.minecraft.world.WorldSettings;
-import net.minecraft.world.WorldSettings.GameType;
 import dev.isnow.puppy.command.Command;
 import dev.isnow.puppy.command.CommandInfo;
 import dev.isnow.puppy.exception.CommandException;
 import dev.isnow.puppy.helper.ChatHelper;
+import net.minecraft.command.CommandBase;
+import net.minecraft.command.NumberInvalidException;
+import net.minecraft.world.WorldSettings;
+import net.minecraft.world.WorldSettings.GameType;
 
 @CommandInfo(
     alias = "fakegamemode",

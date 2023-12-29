@@ -1,15 +1,14 @@
 package net.minecraft.client.gui;
 
-import java.awt.*;
-import java.io.IOException;
-
 import dev.isnow.puppy.Puppy;
 import dev.isnow.puppy.helper.ColorHelper;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
 import org.lwjgl.input.Keyboard;
+
+import java.awt.*;
+import java.io.IOException;
 
 public class GuiScreenServerList extends GuiScreen
 {

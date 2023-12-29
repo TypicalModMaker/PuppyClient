@@ -1,10 +1,11 @@
 package dev.isnow.puppy.command;
 
-import java.util.Arrays;
-import java.util.List;
+import dev.isnow.puppy.exception.CommandException;
 import net.minecraft.client.Minecraft;
 import org.apache.commons.lang3.Validate;
-import dev.isnow.puppy.exception.CommandException;
+
+import java.util.Arrays;
+import java.util.List;
 
 public abstract class Command {
 

@@ -2,69 +2,50 @@
 // Class Version: 8
 package net.minecraft.network;
 
-import io.netty.bootstrap.AbstractBootstrap;
+import com.google.common.collect.Queues;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
-import org.apache.logging.log4j.MarkerManager;
-import org.apache.logging.log4j.LogManager;
-import net.minecraft.util.ChatComponentText;
-import viamcp.utils.NettyUtil;
-import java.security.Key;
-import net.minecraft.util.CryptManager;
-import javax.crypto.SecretKey;
-import io.netty.channel.local.LocalServerChannel;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelFutureListener;
-import java.util.UUID;
+import com.viaversion.viaversion.api.connection.UserConnection;
+import com.viaversion.viaversion.connection.UserConnectionImpl;
+import com.viaversion.viaversion.protocol.ProtocolPipelineImpl;
 import dev.isnow.puppy.Puppy;
-import net.minecraft.network.handshake.client.C00Handshake;
-import net.minecraft.client.Minecraft;
-import net.minecraft.util.ITickable;
-import org.apache.commons.lang3.ArrayUtils;
+import dev.isnow.puppy.helper.TimeHelper;
+import dev.isnow.puppy.holder.Holder;
+import io.netty.bootstrap.Bootstrap;
+import io.netty.channel.*;
+import io.netty.channel.epoll.Epoll;
+import io.netty.channel.epoll.EpollEventLoopGroup;
+import io.netty.channel.epoll.EpollSocketChannel;
+import io.netty.channel.local.LocalChannel;
+import io.netty.channel.local.LocalEventLoopGroup;
+import io.netty.channel.local.LocalServerChannel;
+import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.socket.SocketChannel;
+import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.timeout.ReadTimeoutHandler;
+import io.netty.handler.timeout.TimeoutException;
+import io.netty.util.AttributeKey;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
+import net.minecraft.client.Minecraft;
+import net.minecraft.network.handshake.client.C00Handshake;
+import net.minecraft.util.*;
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.Validate;
-import dev.isnow.puppy.holder.Holder;
-import dev.isnow.puppy.helper.TimeHelper;
-import io.netty.handler.timeout.TimeoutException;
-import net.minecraft.util.ChatComponentTranslation;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.local.LocalChannel;
-import com.viaversion.viaversion.api.connection.UserConnection;
-import viamcp.handler.MCPDecodeHandler;
-import viamcp.handler.MCPEncodeHandler;
-import com.viaversion.viaversion.protocol.ProtocolPipelineImpl;
-import com.viaversion.viaversion.connection.UserConnectionImpl;
-import viamcp.ViaMCP;
-import io.netty.channel.socket.SocketChannel;
-import net.minecraft.util.MessageSerializer;
-import net.minecraft.util.MessageSerializer2;
-import net.minecraft.util.MessageDeserializer;
-import net.minecraft.util.MessageDeserializer2;
-import io.netty.channel.ChannelHandler;
-import io.netty.handler.timeout.ReadTimeoutHandler;
-import io.netty.channel.ChannelException;
-import io.netty.channel.ChannelOption;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.EventLoopGroup;
-import io.netty.bootstrap.Bootstrap;
-import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.channel.epoll.EpollSocketChannel;
-import io.netty.channel.epoll.Epoll;
-import java.net.InetAddress;
-import com.google.common.collect.Queues;
-import net.minecraft.util.IChatComponent;
-import java.net.SocketAddress;
-import io.netty.channel.Channel;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
-import java.util.Queue;
-import io.netty.channel.local.LocalEventLoopGroup;
-import io.netty.channel.epoll.EpollEventLoopGroup;
-import io.netty.channel.nio.NioEventLoopGroup;
-import net.minecraft.util.LazyLoadBase;
-import io.netty.util.AttributeKey;
-import org.apache.logging.log4j.Marker;
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import io.netty.channel.SimpleChannelInboundHandler;
+import org.apache.logging.log4j.Marker;
+import org.apache.logging.log4j.MarkerManager;
+import vialoadingbase.ViaLoadingBase;
+import vialoadingbase.netty.event.CompressionReorderEvent;
+import viamcp.MCPVLBPipeline;
+import viamcp.ViaMCP;
+
+import javax.crypto.SecretKey;
+import java.net.InetAddress;
+import java.net.SocketAddress;
+import java.util.Queue;
+import java.util.UUID;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class NetworkManager extends SimpleChannelInboundHandler<Packet>
 {
@@ -111,10 +92,11 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet>
                 }
                 catch (final ChannelException ex) {}
                 p_initChannel_1_.pipeline().addLast("timeout", new ReadTimeoutHandler(30)).addLast("splitter", new MessageDeserializer2()).addLast("decoder", new MessageDeserializer(EnumPacketDirection.CLIENTBOUND)).addLast("prepender", new MessageSerializer2()).addLast("encoder", new MessageSerializer(EnumPacketDirection.SERVERBOUND)).addLast("packet_handler", networkmanager);
-                if (p_initChannel_1_ instanceof SocketChannel && ViaMCP.getInstance().getVersion() != 47) {
+                if (p_initChannel_1_ instanceof SocketChannel && ViaLoadingBase.getInstance().getTargetVersion().getVersion() != ViaMCP.NATIVE_VERSION) {
                     final UserConnection user = new UserConnectionImpl(p_initChannel_1_, true);
                     new ProtocolPipelineImpl(user);
-                    p_initChannel_1_.pipeline().addBefore("encoder", "via-encoder", new MCPEncodeHandler(user)).addBefore("decoder", "via-decoder", new MCPDecodeHandler(user));
+
+                    p_initChannel_1_.pipeline().addLast(new MCPVLBPipeline(user));
                 }
             }
         }).channel(oclass).connect(p_181124_0_, p_181124_1_).syncUninterruptibly();
@@ -339,14 +321,8 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet>
             if (this.channel.pipeline().get("decompress") instanceof NettyCompressionDecoder) {
                 ((NettyCompressionDecoder)this.channel.pipeline().get("decompress")).setCompressionTreshold(treshold);
             }
-            else {
-                NettyUtil.decodeEncodePlacement(this.channel.pipeline(), "decoder", "decompress", new NettyCompressionDecoder(treshold));
-            }
             if (this.channel.pipeline().get("compress") instanceof NettyCompressionEncoder) {
                 ((NettyCompressionEncoder)this.channel.pipeline().get("decompress")).setCompressionTreshold(treshold);
-            }
-            else {
-                NettyUtil.decodeEncodePlacement(this.channel.pipeline(), "encoder", "compress", new NettyCompressionEncoder(treshold));
             }
         }
         else {
@@ -357,6 +333,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet>
                 this.channel.pipeline().remove("compress");
             }
         }
+        this.channel.pipeline().fireUserEventTriggered(new CompressionReorderEvent());
     }
 
     public void checkDisconnected() {

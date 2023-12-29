@@ -1,6 +1,5 @@
 package dev.isnow.puppy.command.impl;
 
-import com.viaversion.viaversion.libs.kyori.adventure.text.TextComponent;
 import dev.isnow.puppy.command.Command;
 import dev.isnow.puppy.command.CommandInfo;
 import dev.isnow.puppy.exception.CommandException;

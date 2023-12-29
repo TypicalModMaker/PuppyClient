@@ -2,7 +2,6 @@ package optifine;
 
 import net.minecraft.client.renderer.RenderGlobal;
 import net.minecraft.client.renderer.chunk.RenderChunk;
-import net.minecraft.util.EnumFacing;
 
 public class RenderInfoLazy
 {

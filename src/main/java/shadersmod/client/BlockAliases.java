@@ -1,16 +1,12 @@
 package shadersmod.client;
 
+import optifine.*;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-
-import optifine.Config;
-import optifine.ConnectedParser;
-import optifine.MatchBlock;
-import optifine.PropertiesOrdered;
-import optifine.StrUtils;
 
 public class BlockAliases
 {

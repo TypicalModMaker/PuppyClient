@@ -2,13 +2,12 @@ package net.minecraft.network.play.server;
 
 import dev.isnow.puppy.Puppy;
 import dev.isnow.puppy.helper.ChatHelper;
-import io.netty.buffer.ByteBuf;
-import java.io.IOException;
-import java.nio.charset.Charset;
-
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.INetHandlerPlayClient;
+
+import java.io.IOException;
+import java.nio.charset.Charset;
 
 public class S3FPacketCustomPayload implements Packet<INetHandlerPlayClient>
 {

@@ -19,7 +19,6 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import optifine.Config;
-
 import org.lwjgl.opengl.GL11;
 import shadersmod.client.Shaders;
 

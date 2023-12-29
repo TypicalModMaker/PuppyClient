@@ -1,10 +1,10 @@
 package shadersmod.client;
 
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-
 import net.minecraft.util.BlockPos;
 import optifine.BlockPosM;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class IteratorAxis implements Iterator<BlockPos>
 {

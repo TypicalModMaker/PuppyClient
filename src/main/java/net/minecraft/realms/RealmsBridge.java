@@ -1,6 +1,5 @@
 package net.minecraft.realms;
 
-import java.lang.reflect.Constructor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import org.apache.logging.log4j.LogManager;

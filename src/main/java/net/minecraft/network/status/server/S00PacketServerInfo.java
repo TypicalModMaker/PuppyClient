@@ -2,9 +2,6 @@ package net.minecraft.network.status.server;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import java.io.IOException;
-
-import dev.isnow.puppy.Puppy;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.ServerStatusResponse;
@@ -12,6 +9,8 @@ import net.minecraft.network.status.INetHandlerStatusClient;
 import net.minecraft.util.ChatStyle;
 import net.minecraft.util.EnumTypeAdapterFactory;
 import net.minecraft.util.IChatComponent;
+
+import java.io.IOException;
 
 public class S00PacketServerInfo implements Packet<INetHandlerStatusClient>
 {

@@ -16,7 +16,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Optional;
 
 public class MainMenuHook extends GuiScreen {
 
@@ -65,11 +64,9 @@ public class MainMenuHook extends GuiScreen {
 
         int line = 1;
         changeLogs.add("");
-        changeLogs.add("+ Shaders support (EXPERIMENTAL)");
-        changeLogs.add("+ MotionBlur (make sure you have fastrender off!) Video Settings -> Performance -> Fast Render");
-        changeLogs.add("+ .motionblur Command, for usage check .help");
+        changeLogs.add("+ Improved Performance");
+        changeLogs.add("+ Updated ViaMCP to 1.20.3/1.20.4 and 1.20.5 (Yes I know this haven't been released yet)");
 
-        changeLogs.add("* DiscordSRVSpam fixed");
         changeLogs.add("");
 
         changeLogs.add("");

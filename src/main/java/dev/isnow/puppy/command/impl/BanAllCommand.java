@@ -1,14 +1,9 @@
 package dev.isnow.puppy.command.impl;
 
-import dev.isnow.puppy.Puppy;
 import dev.isnow.puppy.command.Command;
 import dev.isnow.puppy.command.CommandInfo;
 import dev.isnow.puppy.exception.CommandException;
 import dev.isnow.puppy.helper.SaveLoad;
-
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 
 @CommandInfo(
         alias = "banall",

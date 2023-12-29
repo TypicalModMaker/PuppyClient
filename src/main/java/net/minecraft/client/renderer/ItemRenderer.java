@@ -28,7 +28,6 @@ import net.minecraft.world.storage.MapData;
 import optifine.Config;
 import optifine.DynamicLights;
 import optifine.Reflector;
-
 import org.lwjgl.opengl.GL11;
 import shadersmod.client.Shaders;
 

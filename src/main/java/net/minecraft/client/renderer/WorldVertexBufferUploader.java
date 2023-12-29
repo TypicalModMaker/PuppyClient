@@ -1,14 +1,14 @@
 package net.minecraft.client.renderer;
 
-import java.nio.ByteBuffer;
-import java.util.List;
 import net.minecraft.client.renderer.vertex.VertexFormat;
 import net.minecraft.client.renderer.vertex.VertexFormatElement;
 import optifine.Config;
 import optifine.Reflector;
-
 import org.lwjgl.opengl.GL11;
 import shadersmod.client.SVertexBuilder;
+
+import java.nio.ByteBuffer;
+import java.util.List;
 
 public class WorldVertexBufferUploader
 {

@@ -1,41 +1,30 @@
 package dev.isnow.puppy;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
-
-import com.viaversion.viaversion.api.ViaManager;
 import dev.isnow.puppy.command.CommandManager;
 import dev.isnow.puppy.command.impl.*;
 import dev.isnow.puppy.exploit.ExploitManager;
+import dev.isnow.puppy.exploit.impl.creative.AnvilExploit;
+import dev.isnow.puppy.exploit.impl.flood.AttackExploit;
 import dev.isnow.puppy.exploit.impl.flood.ChannelExploit;
 import dev.isnow.puppy.exploit.impl.flood.CommandBlockExploit;
 import dev.isnow.puppy.exploit.impl.flood.LuckpermsExploit;
 import dev.isnow.puppy.exploit.impl.nbt.*;
-import dev.isnow.puppy.exploit.impl.other.*;
-import dev.isnow.puppy.helper.FontHelper;
+import dev.isnow.puppy.exploit.impl.other.FaweExploit;
+import dev.isnow.puppy.exploit.impl.other.MultiverseExploit;
+import dev.isnow.puppy.exploit.impl.other.PEXExploit;
+import dev.isnow.puppy.exploit.impl.other.SpamExploit;
 import dev.isnow.puppy.helper.MinecraftFontRenderer;
-import dev.isnow.puppy.helper.OpenGlHelper;
-import dev.isnow.puppy.helper.SaveLoad;
-import dev.isnow.puppy.hook.alt.AltLoginThread;
 import dev.isnow.puppy.rpc.DiscordRichPresenceManager;
-import fr.litarvan.openauth.microsoft.MicrosoftAuthResult;
-import fr.litarvan.openauth.microsoft.MicrosoftAuthenticationException;
-import fr.litarvan.openauth.microsoft.MicrosoftAuthenticator;
 import net.arikia.dev.drpc.DiscordRPC;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.DynamicTexture;
-import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.item.Item;
 import net.minecraft.util.Session;
 import org.lwjgl.opengl.Display;
-import dev.isnow.puppy.exploit.impl.creative.AnvilExploit;
-import dev.isnow.puppy.exploit.impl.flood.AttackExploit;
-import us.myles.ViaVersion.api.protocol.ProtocolRegistry;
 import viamcp.ViaMCP;
 
-import javax.imageio.ImageIO;
+import java.io.File;
+import java.util.HashMap;
 
 public enum Puppy {
   INSTANCE;
@@ -44,7 +33,7 @@ public enum Puppy {
   private final ExploitManager exploitManager;
   private DiscordRichPresenceManager discordRichPresence;
 
-  public final String VER = "1.4-PRIVATE";
+  public final String VER = "1.5-PUBLIC";
 
   public Session orginalSession;
   public String PreUUID;
@@ -77,8 +66,8 @@ public enum Puppy {
 
     try
     {
-      ViaMCP.getInstance().start();
-      ViaMCP.getInstance().initAsyncSlider(80, 5, 100, 20);
+      ViaMCP.create();
+      ViaMCP.INSTANCE.initAsyncSlider(80, 5, 100, 20);
     }
     catch (Exception e)
     {

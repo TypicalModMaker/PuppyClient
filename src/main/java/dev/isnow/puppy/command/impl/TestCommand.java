@@ -4,19 +4,13 @@ import dev.isnow.puppy.command.Command;
 import dev.isnow.puppy.command.CommandInfo;
 import dev.isnow.puppy.exception.CommandException;
 import dev.isnow.puppy.helper.ChatHelper;
-import dev.isnow.puppy.helper.PlayerHelper;
 import io.netty.buffer.Unpooled;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiMultiplayer;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.client.C17PacketCustomPayload;
-import org.apache.commons.lang3.RandomStringUtils;
 
 import java.io.ByteArrayOutputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.util.Random;
 
 @CommandInfo(
         alias = "test",

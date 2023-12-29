@@ -1,10 +1,11 @@
 package dev.isnow.puppy.command;
 
+import dev.isnow.puppy.exception.CommandException;
+import dev.isnow.puppy.helper.ChatHelper;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import dev.isnow.puppy.exception.CommandException;
-import dev.isnow.puppy.helper.ChatHelper;
 
 public class CommandManager {
 

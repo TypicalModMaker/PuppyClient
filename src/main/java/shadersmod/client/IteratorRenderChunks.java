@@ -1,10 +1,11 @@
 package shadersmod.client;
 
-import java.util.Iterator;
 import net.minecraft.client.renderer.ViewFrustum;
 import net.minecraft.client.renderer.chunk.RenderChunk;
 import net.minecraft.util.BlockPos;
 import optifine.BlockPosM;
+
+import java.util.Iterator;
 
 public class IteratorRenderChunks implements Iterator<RenderChunk>
 {

@@ -1,6 +1,5 @@
 package net.minecraft.client.renderer.tileentity;
 
-import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiUtilRenderComponents;
@@ -13,8 +12,9 @@ import net.minecraft.util.IChatComponent;
 import net.minecraft.util.ResourceLocation;
 import optifine.Config;
 import optifine.CustomColors;
-
 import org.lwjgl.opengl.GL11;
+
+import java.util.List;
 
 public class TileEntitySignRenderer extends TileEntitySpecialRenderer
 {

@@ -1,13 +1,14 @@
 package optifine;
 
-import java.awt.Dimension;
+import net.minecraft.client.renderer.GLAllocation;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL12;
+
+import java.awt.*;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.client.renderer.GLAllocation;
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL12;
 
 public class Mipmaps
 {

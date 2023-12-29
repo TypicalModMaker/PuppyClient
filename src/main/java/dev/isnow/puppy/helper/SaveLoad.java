@@ -1,15 +1,12 @@
 package dev.isnow.puppy.helper;
 
 
-import java.awt.image.BufferedImage;
-import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.concurrent.ConcurrentHashMap;
-
 import net.minecraft.client.Minecraft;
 
 import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 
 public class SaveLoad {

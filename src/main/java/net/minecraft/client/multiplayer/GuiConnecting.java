@@ -1,10 +1,5 @@
 package net.minecraft.client.multiplayer;
 
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import java.util.concurrent.atomic.AtomicInteger;
-
 import dev.isnow.puppy.Puppy;
 import dev.isnow.puppy.command.impl.TestCommand;
 import net.minecraft.client.Minecraft;
@@ -22,7 +17,13 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import vialoadingbase.ViaLoadingBase;
 import viamcp.ViaMCP;
+
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class GuiConnecting extends GuiScreen {
 
@@ -71,7 +72,7 @@ public class GuiConnecting extends GuiScreen {
                     }
 
                     if(Puppy.INSTANCE.autoVersion) {
-                        ViaMCP.getInstance().setVersion(getProtocolVersion());
+                        ViaLoadingBase.getInstance().reload(getProtocolVersion());
                     }
                     inetaddress = InetAddress.getByName(ip);
                     GuiConnecting.this.networkManager = NetworkManager.func_181124_a(inetaddress, port, GuiConnecting.this.mc.gameSettings.func_181148_f());

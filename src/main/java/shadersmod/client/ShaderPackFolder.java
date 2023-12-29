@@ -1,11 +1,11 @@
 package shadersmod.client;
 
+import optifine.StrUtils;
+
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
-
-import optifine.StrUtils;
 
 public class ShaderPackFolder implements IShaderPack
 {

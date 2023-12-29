@@ -5,8 +5,6 @@ import dev.isnow.puppy.command.Command;
 import dev.isnow.puppy.command.CommandInfo;
 import dev.isnow.puppy.exception.CommandException;
 import dev.isnow.puppy.helper.ChatHelper;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
 
 @CommandInfo(
         alias = "bind",

@@ -133,14 +133,14 @@
     <dependency>
       <groupId>com.viaversion</groupId>
       <artifactId>viaversion</artifactId>
-      <version>4.8.1-SNAPSHOT</version>
+      <version>4.10.0-23w51a-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
 
     <dependency>
       <groupId>com.viaversion</groupId>
-      <artifactId>viarewind-all</artifactId>
-      <version>3.0.0-SNAPSHOT</version>
+      <artifactId>viarewind-common</artifactId>
+      <version>3.0.6-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
 
@@ -150,7 +150,7 @@
     <dependency>
       <groupId>com.viaversion</groupId>
       <artifactId>viabackwards</artifactId>
-      <version>4.8.1-SNAPSHOT</version>
+      <version>4.9.2-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
 

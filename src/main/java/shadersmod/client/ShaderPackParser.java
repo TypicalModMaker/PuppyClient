@@ -1,19 +1,13 @@
 package shadersmod.client;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.CharArrayReader;
-import java.io.CharArrayWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import optifine.Config;
+import optifine.StrUtils;
+
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import optifine.Config;
-import optifine.StrUtils;
 
 public class ShaderPackParser
 {

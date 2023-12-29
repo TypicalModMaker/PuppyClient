@@ -4,7 +4,6 @@ import net.minecraft.client.renderer.chunk.RenderChunk;
 import net.minecraft.client.renderer.vertex.VertexBuffer;
 import net.minecraft.util.EnumWorldBlockLayer;
 import optifine.Config;
-
 import org.lwjgl.opengl.GL11;
 import shadersmod.client.ShadersRender;
 

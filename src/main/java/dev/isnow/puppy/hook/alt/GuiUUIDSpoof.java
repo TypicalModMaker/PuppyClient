@@ -1,9 +1,5 @@
 package dev.isnow.puppy.hook.alt;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
-
 import com.mojang.authlib.GameProfile;
 import dev.isnow.puppy.Puppy;
 import dev.isnow.puppy.helper.ColorHelper;
@@ -14,6 +10,10 @@ import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.util.Session;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
 
 public class GuiUUIDSpoof extends GuiScreen {
     protected GuiTextField fakeNickField;

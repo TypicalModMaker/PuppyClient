@@ -1,18 +1,11 @@
 package dev.isnow.puppy.command.impl;
 
-import dev.isnow.puppy.Puppy;
 import dev.isnow.puppy.command.Command;
 import dev.isnow.puppy.command.CommandInfo;
 import dev.isnow.puppy.exception.CommandException;
-import dev.isnow.puppy.exploit.Exploit;
 import dev.isnow.puppy.helper.ChatHelper;
 import dev.isnow.puppy.helper.NetHelper;
-import dev.isnow.puppy.helper.PlayerHelper;
 import net.minecraft.network.play.client.C14PacketTabComplete;
-import net.minecraft.server.MinecraftServer;
-
-import java.util.Arrays;
-import java.util.stream.Collectors;
 
 @CommandInfo(
         alias = "pl",

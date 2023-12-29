@@ -1,19 +1,11 @@
 package net.minecraft.client.gui;
 
-import java.io.IOException;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.settings.GameSettings;
-import optifine.Config;
-import optifine.GuiAnimationSettingsOF;
-import optifine.GuiDetailSettingsOF;
-import optifine.GuiOptionButtonOF;
-import optifine.GuiOptionSliderOF;
-import optifine.GuiOtherSettingsOF;
-import optifine.GuiPerformanceSettingsOF;
-import optifine.GuiQualitySettingsOF;
-import optifine.Lang;
-import optifine.TooltipManager;
+import optifine.*;
 import shadersmod.client.GuiShaders;
+
+import java.io.IOException;
 
 public class GuiVideoSettings extends GuiScreen
 {

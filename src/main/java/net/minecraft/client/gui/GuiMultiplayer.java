@@ -2,9 +2,6 @@ package net.minecraft.client.gui;
 
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
-import java.io.IOException;
-import java.util.List;
-
 import dev.isnow.puppy.Puppy;
 import dev.isnow.puppy.helper.ColorHelper;
 import dev.isnow.puppy.hook.alt.GuiUUIDSpoof;
@@ -18,7 +15,11 @@ import net.minecraft.client.resources.I18n;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.input.Keyboard;
+import vialoadingbase.ViaLoadingBase;
 import viamcp.ViaMCP;
+
+import java.io.IOException;
+import java.util.List;
 
 public class GuiMultiplayer extends GuiScreen implements GuiYesNoCallback
 {
@@ -115,8 +116,8 @@ public class GuiMultiplayer extends GuiScreen implements GuiYesNoCallback
         this.buttonList.add(new GuiButton(69, 5, 5, 75, 20, "UUID Spoof"));
         this.buttonList.add(new GuiButton(9, width / 2 - 260, height - 52, 70, 20, BungeeSpoofBtn()));
         this.buttonList.add(new GuiButton(10, this.width / 2 + 4 + 150, this.height - 52, 100, 20, VersionBtn()));
-        if(ViaMCP.ASYNC_EXEC != null) {
-            this.buttonList.add(ViaMCP.getInstance().asyncSlider);
+        if(ViaMCP.INSTANCE.getAsyncVersionSlider() != null) {
+            this.buttonList.add(ViaMCP.INSTANCE.getAsyncVersionSlider());
         }
         IpBungeeBtn = new GuiTextField(10, this.fontRendererObj, width / 2 - 258, height - 26, 66, 16);
         IpBungeeBtn.setText(Puppy.INSTANCE.ipBungeeHack);
@@ -191,7 +192,7 @@ public class GuiMultiplayer extends GuiScreen implements GuiYesNoCallback
             else if (button.id == 10) {
                 Puppy.INSTANCE.autoVersion = !Puppy.INSTANCE.autoVersion;
                 if(!Puppy.INSTANCE.autoVersion) {
-                    ViaMCP.getInstance().setVersion(ViaMCP.getInstance().asyncSlider.getProtocol());
+                    ViaLoadingBase.getInstance().reload(ViaMCP.INSTANCE.getAsyncVersionSlider().values.get((int) (ViaMCP.INSTANCE.getAsyncVersionSlider().sliderValue * (ViaMCP.INSTANCE.getAsyncVersionSlider().values.size() - 1))));
                 }
                 button.displayString = VersionBtn();
             }

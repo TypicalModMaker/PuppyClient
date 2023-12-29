@@ -1,8 +1,9 @@
 package dev.isnow.puppy.holder;
 
+import dev.isnow.puppy.helper.TimeHelper;
+
 import java.util.ArrayList;
 import java.util.List;
-import dev.isnow.puppy.helper.TimeHelper;
 
 public class Holder {
 

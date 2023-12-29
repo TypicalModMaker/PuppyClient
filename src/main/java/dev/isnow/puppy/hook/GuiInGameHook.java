@@ -4,14 +4,12 @@ import dev.isnow.puppy.Puppy;
 import dev.isnow.puppy.command.impl.BaltopDumpCommand;
 import dev.isnow.puppy.command.impl.ScreenshotCommand;
 import dev.isnow.puppy.command.impl.TestCommand;
-import dev.isnow.puppy.helper.*;
+import dev.isnow.puppy.helper.ChatHelper;
+import dev.isnow.puppy.helper.ColorHelper;
+import dev.isnow.puppy.helper.TimeHelper;
 import dev.isnow.puppy.holder.Holder;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiIngame;
-import org.lwjgl.opengl.GL11;
-
-import java.awt.*;
 
 public class GuiInGameHook extends GuiIngame {
 
