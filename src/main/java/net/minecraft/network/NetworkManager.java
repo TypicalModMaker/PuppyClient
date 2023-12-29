@@ -91,7 +91,8 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet>
                     p_initChannel_1_.config().setOption(ChannelOption.TCP_NODELAY, true);
                 }
                 catch (final ChannelException ex) {}
-                p_initChannel_1_.pipeline().addLast("timeout", new ReadTimeoutHandler(30)).addLast("splitter", new MessageDeserializer2()).addLast("decoder", new MessageDeserializer(EnumPacketDirection.CLIENTBOUND)).addLast("prepender", new MessageSerializer2()).addLast("encoder", new MessageSerializer(EnumPacketDirection.SERVERBOUND)).addLast("packet_handler", networkmanager);
+                p_initChannel_1_.pipeline().addLast((String)"timeout", (ChannelHandler)(new ReadTimeoutHandler(30))).addLast((String)"splitter", (ChannelHandler)(new MessageDeserializer2())).addLast((String)"decoder", (ChannelHandler)(new MessageDeserializer(EnumPacketDirection.CLIENTBOUND))).addLast((String)"prepender", (ChannelHandler)(new MessageSerializer2())).addLast((String)"encoder", (ChannelHandler)(new MessageSerializer(EnumPacketDirection.SERVERBOUND))).addLast((String)"packet_handler", (ChannelHandler)networkmanager);
+
                 if (p_initChannel_1_ instanceof SocketChannel && ViaLoadingBase.getInstance().getTargetVersion().getVersion() != ViaMCP.NATIVE_VERSION) {
                     final UserConnection user = new UserConnectionImpl(p_initChannel_1_, true);
                     new ProtocolPipelineImpl(user);
@@ -317,19 +318,35 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet>
     }
 
     public void setCompressionTreshold(final int treshold) {
-        if (treshold >= 0) {
-            if (this.channel.pipeline().get("decompress") instanceof NettyCompressionDecoder) {
+        if (treshold >= 0)
+        {
+            if (this.channel.pipeline().get("decompress") instanceof NettyCompressionDecoder)
+            {
                 ((NettyCompressionDecoder)this.channel.pipeline().get("decompress")).setCompressionTreshold(treshold);
             }
-            if (this.channel.pipeline().get("compress") instanceof NettyCompressionEncoder) {
+            else
+            {
+                this.channel.pipeline().addBefore("decoder", "decompress", new NettyCompressionDecoder(treshold));
+            }
+
+            if (this.channel.pipeline().get("compress") instanceof NettyCompressionEncoder)
+            {
                 ((NettyCompressionEncoder)this.channel.pipeline().get("decompress")).setCompressionTreshold(treshold);
             }
+            else
+            {
+                this.channel.pipeline().addBefore("encoder", "compress", new NettyCompressionEncoder(treshold));
+            }
         }
-        else {
-            if (this.channel.pipeline().get("decompress") instanceof NettyCompressionDecoder) {
+        else
+        {
+            if (this.channel.pipeline().get("decompress") instanceof NettyCompressionDecoder)
+            {
                 this.channel.pipeline().remove("decompress");
             }
-            if (this.channel.pipeline().get("compress") instanceof NettyCompressionEncoder) {
+
+            if (this.channel.pipeline().get("compress") instanceof NettyCompressionEncoder)
+            {
                 this.channel.pipeline().remove("compress");
             }
         }
