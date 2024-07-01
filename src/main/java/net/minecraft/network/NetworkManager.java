@@ -35,9 +35,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.Marker;
 import org.apache.logging.log4j.MarkerManager;
-import vialoadingbase.ViaLoadingBase;
 import vialoadingbase.netty.event.CompressionReorderEvent;
-import viamcp.MCPVLBPipeline;
 import viamcp.ViaMCP;
 
 import javax.crypto.SecretKey;
@@ -93,11 +91,11 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet>
                 catch (final ChannelException ex) {}
                 p_initChannel_1_.pipeline().addLast((String)"timeout", (ChannelHandler)(new ReadTimeoutHandler(30))).addLast((String)"splitter", (ChannelHandler)(new MessageDeserializer2())).addLast((String)"decoder", (ChannelHandler)(new MessageDeserializer(EnumPacketDirection.CLIENTBOUND))).addLast((String)"prepender", (ChannelHandler)(new MessageSerializer2())).addLast((String)"encoder", (ChannelHandler)(new MessageSerializer(EnumPacketDirection.SERVERBOUND))).addLast((String)"packet_handler", (ChannelHandler)networkmanager);
 
-                if (p_initChannel_1_ instanceof SocketChannel && ViaLoadingBase.getInstance().getTargetVersion().getVersion() != ViaMCP.NATIVE_VERSION) {
+                if (p_initChannel_1_ instanceof SocketChannel && vialoadingbase.ViaLoadingBase.getInstance().getTargetVersion().getVersion() != ViaMCP.NATIVE_VERSION) {
                     final UserConnection user = new UserConnectionImpl(p_initChannel_1_, true);
                     new ProtocolPipelineImpl(user);
 
-                    p_initChannel_1_.pipeline().addLast(new MCPVLBPipeline(user));
+                    p_initChannel_1_.pipeline().addLast(new viamcp.MCPVLBPipeline(user));
                 }
             }
         }).channel(oclass).connect(p_181124_0_, p_181124_1_).syncUninterruptibly();

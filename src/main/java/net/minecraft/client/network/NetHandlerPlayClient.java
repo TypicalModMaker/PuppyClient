@@ -2,6 +2,7 @@ package net.minecraft.client.network;
 
 import com.google.common.collect.Maps;
 import com.mojang.authlib.GameProfile;
+import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
 import dev.isnow.puppy.command.impl.BaltopDumpCommand;
 import dev.isnow.puppy.command.impl.HolographicDisplaysCommand;
 import dev.isnow.puppy.helper.ChatHelper;
@@ -64,6 +65,7 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.storage.MapData;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import vialoadingbase.ViaLoadingBase;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -1069,6 +1071,10 @@ public class NetHandlerPlayClient implements INetHandlerPlayClient
     public void handleConfirmTransaction(S32PacketConfirmTransaction packetIn)
     {
         PacketThreadUtil.checkThreadAndEnqueue(packetIn, this, this.gameController);
+        if (ViaLoadingBase.getInstance().getTargetVersion().newerThanOrEqualTo(ProtocolVersion.v1_17)) {
+            this.addToSendQueue(new C0FPacketConfirmTransaction(packetIn.getWindowId(), (short) 0, false));
+            return;
+        }
         Container container = null;
         EntityPlayer entityplayer = this.gameController.thePlayer;
 

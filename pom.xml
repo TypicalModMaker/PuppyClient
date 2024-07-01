@@ -130,29 +130,8 @@
       <scope>provided</scope>
     </dependency>
 
-    <dependency>
-      <groupId>com.viaversion</groupId>
-      <artifactId>viaversion</artifactId>
-      <version>4.9.1</version>
-      <scope>compile</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>com.viaversion</groupId>
-      <artifactId>viarewind-common</artifactId>
-      <version>3.0.5</version>
-      <scope>compile</scope>
-    </dependency>
-
     <!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
 
-
-    <dependency>
-      <groupId>com.viaversion</groupId>
-      <artifactId>viabackwards</artifactId>
-      <version>4.9.0</version>
-      <scope>compile</scope>
-    </dependency>
 
     <dependency>
       <artifactId>commons-lang3</artifactId>
@@ -330,6 +309,30 @@
       <scope>provided</scope>
     </dependency>
 
+    <dependency>
+      <groupId>viaver</groupId>
+      <artifactId>viaver</artifactId>
+      <version>1.0</version>
+      <type>jar</type>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/libs/downgraded-ViaVersion-5.0.2-SNAPSHOT.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>viaver</groupId>
+      <artifactId>viabackwards</artifactId>
+      <version>1.0</version>
+      <type>jar</type>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/libs/downgraded-ViaBackwards-5.0.2-SNAPSHOT.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>viaver</groupId>
+      <artifactId>viarewind</artifactId>
+      <version>1.0</version>
+      <type>jar</type>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/libs/downgraded-ViaRewind-4.0.1-SNAPSHOT.jar</systemPath>
+    </dependency>
     <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
     <dependency>
       <groupId>com.googlecode.json-simple</groupId>

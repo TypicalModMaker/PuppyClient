@@ -1,13 +1,11 @@
 vialoadingbase\command\UserCommandSender.class
 vialoadingbase\util\VLBTask.class
 vialoadingbase\model\ProtocolRange.class
-vialoadingbase\command\impl\LeakDetectSubCommand.class
 vialoadingbase\platform\ViaRewindPlatformImpl.class
 vialoadingbase\platform\ViaBackwardsPlatformImpl.class
 viamcp\fixes\AttackOrder.class
 dev\isnow\puppy\command\impl\FetchAllCommand.class
 vialoadingbase\provider\VLBBaseVersionProvider.class
-vialoadingbase\model\ComparableProtocolVersion.class
 viamcp\MCPVLBPipeline.class
 dev\isnow\puppy\command\impl\VClipCommand.class
 vialoadingbase\platform\ViaVersionPlatformImpl.class

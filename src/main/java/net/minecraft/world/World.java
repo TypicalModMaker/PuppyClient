@@ -29,7 +29,7 @@ import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.storage.ISaveHandler;
 import net.minecraft.world.storage.MapStorage;
 import net.minecraft.world.storage.WorldInfo;
-import viamcp.utils.FixedSoundEngine;
+import viamcp.fixes.FixedSoundEngine;
 
 import java.util.*;
 import java.util.concurrent.Callable;

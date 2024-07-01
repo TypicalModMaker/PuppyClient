@@ -191,9 +191,9 @@ public class GuiMultiplayer extends GuiScreen implements GuiYesNoCallback
             }
             else if (button.id == 10) {
                 Puppy.INSTANCE.autoVersion = !Puppy.INSTANCE.autoVersion;
-                if(!Puppy.INSTANCE.autoVersion) {
-                    ViaLoadingBase.getInstance().reload(ViaMCP.INSTANCE.getAsyncVersionSlider().values.get((int) (ViaMCP.INSTANCE.getAsyncVersionSlider().sliderValue * (ViaMCP.INSTANCE.getAsyncVersionSlider().values.size() - 1))));
-                }
+//                if(!Puppy.INSTANCE.autoVersion) {
+//                    ViaLoadingBase.getInstance().reload(ViaMCP.INSTANCE.getAsyncVersionSlider().setVersion();)));
+//                }
                 button.displayString = VersionBtn();
             }
             else if (button.id == 4)

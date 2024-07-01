@@ -1,5 +1,6 @@
 package net.minecraft.client.multiplayer;
 
+import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
 import dev.isnow.puppy.Puppy;
 import dev.isnow.puppy.command.impl.TestCommand;
 import net.minecraft.client.Minecraft;
@@ -72,7 +73,7 @@ public class GuiConnecting extends GuiScreen {
                     }
 
                     if(Puppy.INSTANCE.autoVersion) {
-                        ViaLoadingBase.getInstance().reload(getProtocolVersion());
+                        ViaLoadingBase.getInstance().reload(ProtocolVersion.getProtocol(getProtocolVersion()));
                     }
                     inetaddress = InetAddress.getByName(ip);
                     GuiConnecting.this.networkManager = NetworkManager.func_181124_a(inetaddress, port, GuiConnecting.this.mc.gameSettings.func_181148_f());

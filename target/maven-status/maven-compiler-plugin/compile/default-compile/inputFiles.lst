@@ -391,7 +391,6 @@ C:\Users\maksy\Desktop\Development\PuppyClient\src\main\java\net\minecraft\clien
 C:\Users\maksy\Desktop\Development\PuppyClient\src\main\java\net\minecraft\inventory\SlotCrafting.java
 C:\Users\maksy\Desktop\Development\PuppyClient\src\main\java\net\minecraft\stats\StatBase.java
 C:\Users\maksy\Desktop\Development\PuppyClient\src\main\java\net\minecraft\entity\ai\EntityAIWander.java
-C:\Users\maksy\Desktop\Development\PuppyClient\src\main\java\vialoadingbase\model\ComparableProtocolVersion.java
 C:\Users\maksy\Desktop\Development\PuppyClient\src\main\java\net\minecraft\dispenser\BehaviorProjectileDispense.java
 C:\Users\maksy\Desktop\Development\PuppyClient\src\main\java\net\minecraft\entity\monster\EntitySlime.java
 C:\Users\maksy\Desktop\Development\PuppyClient\src\main\java\net\minecraft\client\renderer\ItemRenderer.java
@@ -746,7 +745,6 @@ C:\Users\maksy\Desktop\Development\PuppyClient\src\main\java\optifine\RandomMobs
 C:\Users\maksy\Desktop\Development\PuppyClient\src\main\java\shadersmod\client\ShaderUniformInt.java
 C:\Users\maksy\Desktop\Development\PuppyClient\src\main\java\net\minecraft\client\model\ModelBook.java
 C:\Users\maksy\Desktop\Development\PuppyClient\src\main\java\net\minecraft\client\renderer\texture\TextureUtil.java
-C:\Users\maksy\Desktop\Development\PuppyClient\src\main\java\vialoadingbase\command\impl\LeakDetectSubCommand.java
 C:\Users\maksy\Desktop\Development\PuppyClient\src\main\java\net\minecraft\block\BlockRedstoneTorch.java
 C:\Users\maksy\Desktop\Development\PuppyClient\src\main\java\net\minecraft\item\ItemSimpleFoiled.java
 C:\Users\maksy\Desktop\Development\PuppyClient\src\main\java\net\minecraft\client\gui\GuiSpectator.java
